@@ -1,9 +1,10 @@
 import React from 'react';
+import Card from './ui/Card';
 
 const Manifesto = () => {
     return (
         <section id="manifesto" className="max-w-5xl mx-auto mb-32 text-center reveal">
-            <div className="glass p-12 md:p-20 rounded-[3rem] relative overflow-hidden">
+            <Card className="p-12 md:p-20 relative overflow-hidden" delay="0ms">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/40 to-transparent"></div>
 
                 <div className="relative z-10">
@@ -23,7 +24,7 @@ const Manifesto = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Card>
         </section>
     );
 };

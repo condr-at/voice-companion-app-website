@@ -1,5 +1,6 @@
 import React from 'react';
 import { scrollToSection } from '../utils/scroll';
+import Button from './ui/Button';
 
 const Navigation = () => {
     return (
@@ -18,9 +19,7 @@ const Navigation = () => {
                     <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollToSection('#privacy'); }} className="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial">Privacy</a>
                 </div>
 
-                <button className="bg-stone-900 hover:bg-stone-800 text-stone-50 px-6 py-2 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2">
-                    <span className="text-lg font-medium editorial">Download Beta</span>
-                </button>
+                <Button variant="nav">Download Beta</Button>
             </div>
         </nav>
     );
