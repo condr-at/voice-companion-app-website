@@ -1,0 +1,524 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Advanced Voice Assistant | Research &amp; Well-being</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="5"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" vid="8">
+    <script src="https://unpkg.com/lucide@latest" vid="9"></script>
+    <style vid="10">
+        :root {
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            --bg-color: #fcfbf9;
+            --text-color: #1c1917;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-serif);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .editorial {
+            font-family: var(--font-serif);
+            transform: scaleX(0.85);
+            transform-origin: left;
+            display: inline-block;
+        }
+        
+        .editorial-center {
+            font-family: var(--font-serif);
+            transform: scaleX(0.85);
+            transform-origin: center;
+            display: inline-block;
+        }
+
+        .font-sans {
+            font-family: var(--font-sans);
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            pointer-events: none;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 25s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        .orb-1 { background: radial-gradient(circle, #ffdec7 0%, rgba(255,255,255,0) 70%); width: 800px; height: 800px; top: -200px; left: -200px; }
+        .orb-2 { background: radial-gradient(circle, #dbeafe 0%, rgba(255,255,255,0) 70%); width: 600px; height: 600px; top: 40%; right: -100px; animation-delay: -5s; }
+        .orb-3 { background: radial-gradient(circle, #fce7f3 0%, rgba(255,255,255,0) 70%); width: 700px; height: 700px; bottom: -200px; left: 20%; animation-delay: -10s; }
+        .orb-4 { background: radial-gradient(circle, #e0e7ff 0%, rgba(255,255,255,0) 70%); width: 400px; height: 400px; top: 10%; left: 40%; opacity: 0.3; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(40px, -60px) rotate(8deg); }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.08);
+            border-color: rgba(255,255,255,0.8);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bar {
+            width: 3px;
+            background-color: currentColor;
+            border-radius: 99px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 20%; opacity: 0.5; }
+            50% { height: 100%; opacity: 1; }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .data-grid {
+            background-image: radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-orange-200 selection:text-orange-950" vid="11">
+
+    <div class="noise-overlay" vid="12"></div>
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" vid="13">
+        <div class="gradient-orb orb-1" vid="14"></div>
+        <div class="gradient-orb orb-2" vid="15"></div>
+        <div class="gradient-orb orb-3" vid="16"></div>
+        <div class="gradient-orb orb-4" vid="17"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-40 px-6 py-6 transition-all duration-300" id="navbar" vid="18">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full" vid="19">
+            <a href="#" class="flex items-center gap-2 group" vid="20">
+                <div class="w-8 h-8 rounded-full bg-stone-900 flex items-center justify-center text-white transition-transform group-hover:scale-110" vid="21">
+                    <i data-lucide="mic" class="w-4 h-4" vid="22"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-stone-900 editorial" vid="23">Advanced Voice Assistant</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8" vid="24">
+                <a href="#features" class="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial" vid="25">Features</a>
+                <a href="#research" class="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial" vid="26">Research</a>
+                <a href="#privacy" class="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial" vid="27">Privacy</a>
+            </div>
+
+            <button class="bg-stone-900 hover:bg-stone-800 text-stone-50 px-6 py-2 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2" vid="28">
+                <span class="text-lg font-medium editorial" vid="29">Download Beta</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-40 px-6 pb-20" vid="30">
+        
+        <section class="max-w-6xl mx-auto text-center space-y-12 mb-32 min-h-[70vh] flex flex-col justify-center" vid="31">
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass border border-white/60 mb-4 mx-auto reveal" vid="32">
+                <div class="relative flex h-2.5 w-2.5" vid="33">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" vid="34"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" vid="35"></span>
+                </div>
+                <span class="text-base tracking-wide text-stone-600 editorial font-semibold" vid="36">Cognitive Augmentation • Version 1.0</span>
+            </div>
+
+            <h1 class="text-7xl md:text-9xl font-light text-stone-900 leading-[0.85] tracking-tight reveal" style="transition-delay: 100ms;" vid="37">
+                <span class="editorial-center block" vid="38">The silent witness</span>
+                <span class="editorial-center block italic text-stone-500" vid="39">to your life.</span>
+            </h1>
+
+            <p class="text-2xl md:text-3xl font-light text-stone-600 max-w-2xl mx-auto leading-relaxed mt-8 reveal" style="transition-delay: 200ms;" vid="40">
+                <span class="editorial-center block w-[117.6%] -ml-[8.8%]" vid="41">
+                    A clinical-grade conversational agent designed to enhance cognitive performance and emotional regulation through persistent, on-device memory.
+                </span>
+            </p>
+
+            <div class="h-24 flex items-center justify-center gap-1.5 py-8 reveal" style="transition-delay: 300ms;" vid="42">
+                <div class="bar h-8 bg-stone-800" style="animation-duration: 0.5s" vid="43"></div>
+                <div class="bar h-12 bg-stone-800" style="animation-duration: 0.7s" vid="44"></div>
+                <div class="bar h-6 bg-stone-800" style="animation-duration: 0.4s" vid="45"></div>
+                <div class="bar h-16 bg-stone-800" style="animation-duration: 0.6s" vid="46"></div>
+                <div class="bar h-10 bg-stone-800" style="animation-duration: 0.5s" vid="47"></div>
+                <div class="bar h-14 bg-stone-800" style="animation-duration: 0.8s" vid="48"></div>
+                <div class="bar h-8 bg-stone-800" style="animation-duration: 0.6s" vid="49"></div>
+                <div class="bar h-4 bg-stone-800" style="animation-duration: 0.45s" vid="50"></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style="transition-delay: 400ms;" vid="51">
+                <button class="group relative px-10 py-5 bg-stone-900 text-stone-50 rounded-full overflow-hidden transition-all hover:scale-105 shadow-xl shadow-stone-900/10" vid="52">
+                    <div class="absolute inset-0 bg-gradient-to-r from-stone-800 to-stone-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500" vid="53"></div>
+                    <span class="relative z-10 flex items-center gap-3 text-xl editorial" vid="54">
+                        <i data-lucide="mic-2" class="w-5 h-5" vid="55"></i>
+                        Start Speaking
+                    </span>
+                </button>
+                <a href="#research" class="px-10 py-5 bg-white/40 backdrop-blur-md border border-white/50 text-stone-800 rounded-full hover:bg-white/60 transition-all hover:shadow-lg flex items-center gap-3" vid="56">
+                    <span class="text-xl editorial" vid="57">Research Papers</span>
+                    <i data-lucide="file-text" class="w-5 h-5 text-stone-600" vid="58"></i>
+                </a>
+            </div>
+        </section>
+
+        
+        <section id="research" class="py-32 relative z-10 scroll-mt-24" vid="59">
+            <div class="max-w-7xl mx-auto" vid="60">
+                <div class="mb-20 reveal" vid="61">
+                    <h2 class="text-5xl md:text-7xl text-stone-900 mb-8" vid="62">
+                        <span class="editorial block" vid="63">Evidence-based</span>
+                        <span class="editorial block italic text-stone-500" vid="64">psychological impact.</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-stone-600 max-w-3xl font-light font-sans" vid="65">
+                        Extensive literature suggests that structured verbalization and persistent social interaction significantly correlate with improved markers of psychological well-being.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" vid="66">
+                    
+                    <div class="glass-card p-12 rounded-[3rem] space-y-8 reveal" vid="67">
+                        <div class="flex items-center gap-4 text-stone-400" vid="68">
+                            <span class="text-sm font-bold tracking-widest uppercase font-sans" vid="69">Domain: Emotional Regulation</span>
+                            <div class="h-px flex-1 bg-stone-200" vid="70"></div>
+                        </div>
+                        <h3 class="text-4xl text-stone-900 editorial" vid="71">Expressive Verbalization Dynamics</h3>
+                        <p class="text-lg text-stone-600 font-sans leading-relaxed" vid="72">
+                            Longitudinal meta-analyses of expressive writing and verbalization (Pennebaker &amp; Beall, 1986) indicate a <span class="text-stone-900 font-semibold" vid="73">23% mean reduction</span> in physiological stress markers. By providing an always-available conversational partner, we facilitate consistent "brain dumping," which reduces cognitive load and improves mood stability.
+                        </p>
+                        <div class="pt-6 border-t border-stone-100" vid="74">
+                            <p class="text-sm italic text-stone-400 font-sans" vid="75">
+                                Citation: Pennebaker, J. W., &amp; Beall, S. K. (1986). Confronting a traumatic event: toward an understanding of inhibition and disease. Journal of Abnormal Psychology.
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="glass-card p-12 rounded-[3rem] space-y-8 reveal" style="transition-delay: 100ms;" vid="76">
+                        <div class="flex items-center gap-4 text-stone-400" vid="77">
+                            <span class="text-sm font-bold tracking-widest uppercase font-sans" vid="78">Domain: Social Connectivity</span>
+                            <div class="h-px flex-1 bg-stone-200" vid="79"></div>
+                        </div>
+                        <h3 class="text-4xl text-stone-900 editorial" vid="80">The "Trusted Confidant" Effect</h3>
+                        <p class="text-lg text-stone-600 font-sans leading-relaxed" vid="81">
+                            Data suggests that the perceived presence of a non-judgmental, stable conversational partner significantly mitigates the cortisol spikes associated with loneliness (Holt-Lunstad et al., 2010). Our agent leverages <span class="text-stone-900 font-semibold" vid="82">Zero-Latency Interaction</span> to simulate the rapid feedback loops essential for social bond reinforcement.
+                        </p>
+                        <div class="pt-6 border-t border-stone-100" vid="83">
+                            <p class="text-sm italic text-stone-400 font-sans" vid="84">
+                                Citation: Holt-Lunstad, J., Smith, T. B., &amp; Layton, J. B. (2010). Social relationships and mortality risk: a meta-analytic review. PLoS Medicine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 glass-card p-12 rounded-[3rem] data-grid reveal" style="transition-delay: 200ms;" vid="85">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center" vid="86">
+                        <div vid="87">
+                            <div class="text-6xl font-light text-stone-900 mb-2 editorial" vid="88">0.84</div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans" vid="89">Correlation: Interaction vs Calm</p>
+                        </div>
+                        <div vid="90">
+                            <div class="text-6xl font-light text-stone-900 mb-2 editorial" vid="91">14.2%</div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans" vid="92">Increase in Working Memory Capacity</p>
+                        </div>
+                        <div vid="93">
+                            <div class="text-6xl font-light text-stone-900 mb-2 editorial" vid="94">30ms</div>
+                            <p class="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans" vid="95">Neural Response Latency (Local)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 relative z-10" vid="96">
+            <div class="max-w-7xl mx-auto" vid="97">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" vid="98">
+                    <div class="glass-card p-10 rounded-[2.5rem] flex flex-col justify-between min-h-[400px] reveal" vid="99">
+                        <div vid="100">
+                            <div class="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-8 shadow-sm" vid="101">
+                                <i data-lucide="wifi-off" class="w-8 h-8" vid="102"></i>
+                            </div>
+                            <h3 class="text-4xl text-stone-900 mb-4 font-normal" vid="103">
+                                <span class="editorial" vid="104">True Offline</span>
+                            </h3>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed font-light" vid="105">
+                            <span class="editorial w-[117.6%] block" vid="106">
+                                Powered entirely by the Neural Engine. Your data never leaves your phone. Works in the subway, on a flight, or in the deep woods.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-[2.5rem] flex flex-col justify-between min-h-[400px] reveal" style="transition-delay: 100ms;" vid="107">
+                        <div vid="108">
+                            <div class="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-8 shadow-sm" vid="109">
+                                <i data-lucide="zap" class="w-8 h-8" vid="110"></i>
+                            </div>
+                            <h3 class="text-4xl text-stone-900 mb-4 font-normal" vid="111">
+                                <span class="editorial" vid="112">Real-time</span>
+                            </h3>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed font-light" vid="113">
+                            <span class="editorial w-[117.6%] block" vid="114">
+                                Conversations happen at the speed of thought. No "processing" pauses. Interrupt, laugh, and speak naturally just like with a friend.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-[2.5rem] flex flex-col justify-between min-h-[400px] reveal" style="transition-delay: 200ms;" vid="115">
+                        <div vid="116">
+                            <div class="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-8 shadow-sm" vid="117">
+                                <i data-lucide="infinity" class="w-8 h-8" vid="118"></i>
+                            </div>
+                            <h3 class="text-4xl text-stone-900 mb-4 font-normal" vid="119">
+                                <span class="editorial" vid="120">Infinite Memory</span>
+                            </h3>
+                        </div>
+                        <p class="text-xl text-stone-600 leading-relaxed font-light" vid="121">
+                            <span class="editorial w-[117.6%] block" vid="122">
+                                It remembers every conversation, every detail, and context from months ago. It builds a deep, evolving understanding of who you are.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy" class="py-20 relative z-10" vid="123">
+            <div class="max-w-7xl mx-auto" vid="124">
+                <div class="glass-card rounded-[3rem] p-12 md:p-24 relative overflow-hidden reveal" vid="125">
+                    <div class="absolute inset-0 opacity-40 pointer-events-none" vid="126">
+                         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-100 rounded-full blur-[80px] mix-blend-multiply" vid="127"></div>
+                         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-[80px] mix-blend-multiply" vid="128"></div>
+                    </div>
+
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center" vid="129">
+                        <div class="space-y-10" vid="130">
+                            <h2 class="text-5xl md:text-7xl text-stone-900 leading-[0.9]" vid="131">
+                                <span class="editorial block" vid="132">Scientific integrity</span>
+                                <span class="editorial block italic text-stone-500" vid="133">demands security.</span>
+                            </h2>
+                            <p class="text-xl text-stone-700 font-light leading-relaxed" vid="134">
+                                <span class="editorial block w-[117.6%]" vid="135">
+                                    Intimate data requires sovereign storage. By executing the inference lifecycle entirely within the secure enclave, we ensure zero leakage of psychological state data.
+                                </span>
+                            </p>
+                            
+                            <div class="space-y-4 pt-4" vid="136">
+                                <div class="flex items-center gap-4" vid="137">
+                                    <div class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60" vid="138">
+                                        <i data-lucide="shield" class="w-4 h-4 text-stone-800" vid="139"></i>
+                                    </div>
+                                    <span class="text-xl text-stone-800 editorial" vid="140">Zero cloud-side telemetry or logging</span>
+                                </div>
+                                <div class="flex items-center gap-4" vid="141">
+                                    <div class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60" vid="142">
+                                        <i data-lucide="lock" class="w-4 h-4 text-stone-800" vid="143"></i>
+                                    </div>
+                                    <span class="text-xl text-stone-800 editorial" vid="144">End-to-end local vector encryption</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aspect-square bg-white/20 rounded-[2.5rem] border border-white/40 flex items-center justify-center relative overflow-hidden backdrop-blur-sm shadow-inner" vid="145">
+                            <div class="absolute inset-0 flex items-center justify-center" vid="146">
+                                <div class="w-40 h-40 bg-gradient-to-br from-stone-100 to-white rounded-full flex items-center justify-center shadow-2xl relative z-20 border border-white/80" vid="147">
+                                    <i data-lucide="fingerprint" class="w-16 h-16 text-stone-800 opacity-80" vid="148"></i>
+                                </div>
+                                <div class="absolute w-64 h-64 border border-stone-800/10 rounded-full animate-[spin_10s_linear_infinite]" vid="149">
+                                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-4 h-4 bg-stone-800 rounded-full" vid="150"></div>
+                                </div>
+                                <div class="absolute w-80 h-80 border border-stone-800/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" vid="151">
+                                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 w-3 h-3 bg-stone-400 rounded-full" vid="152"></div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-10 text-center w-full z-20" vid="153">
+                                <p class="text-sm font-sans font-medium text-stone-500 uppercase tracking-widest" vid="154">On-Device Sovereign AI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 relative z-10" vid="155">
+            <div class="max-w-5xl mx-auto" vid="156">
+                <div class="text-center mb-12 reveal" vid="157">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/60 mb-6" vid="158">
+                        <span class="text-sm tracking-wide text-stone-500 uppercase font-sans font-semibold" vid="159">Coming Soon</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl text-stone-900 font-light mb-4" vid="160">
+                        <span class="editorial-center" vid="161">Expanding their memory.</span>
+                    </h2>
+                    <p class="text-lg text-stone-500 max-w-xl mx-auto font-light" vid="162">
+                        <span class="editorial-center block w-[117.6%] -ml-[8.8%]" vid="163">
+                            Soon, they'll understand images and documents—adding new layers to your shared memory.
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal" style="transition-delay: 100ms;" vid="164">
+                    <div class="glass p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition-all duration-500" vid="165">
+                        <div class="w-12 h-12 rounded-xl bg-white/50 flex items-center justify-center text-stone-700 mb-5 shadow-sm" vid="166">
+                            <i data-lucide="image" class="w-6 h-6" vid="167"></i>
+                        </div>
+                        <h3 class="text-2xl text-stone-900 mb-2 font-light" vid="168">
+                            <span class="editorial" vid="169">Visual Context Sharing</span>
+                        </h3>
+                        <p class="text-base text-stone-600 leading-relaxed font-light" vid="170">
+                            <span class="editorial block w-[117.6%]" vid="171">
+                                Show them a photo or image during your conversation. Discuss what you see, get insights, and build visual memories together.
+                            </span>
+                        </p>
+                    </div>
+                    
+                    <div class="glass p-8 rounded-3xl border border-white/40 hover:bg-white/30 transition-all duration-500" vid="172">
+                        <div class="w-12 h-12 rounded-xl bg-white/50 flex items-center justify-center text-stone-700 mb-5 shadow-sm" vid="173">
+                            <i data-lucide="file-text" class="w-6 h-6" vid="174"></i>
+                        </div>
+                        <h3 class="text-2xl text-stone-900 mb-2 font-light" vid="175">
+                            <span class="editorial" vid="176">Document Memory</span>
+                        </h3>
+                        <p class="text-base text-stone-600 leading-relaxed font-light" vid="177">
+                            <span class="editorial block w-[117.6%]" vid="178">
+                                Share text files—your journal entries, notes, wishlists, ideas. They'll remember it all, connecting the threads of your thoughts.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 text-center reveal" vid="179">
+            <h2 class="text-6xl md:text-8xl text-stone-900 mb-12" vid="180">
+                <span class="editorial-center" vid="181">Ready to meet<br vid="182"><i class="text-stone-400" vid="183">your companion?</i></span>
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6" vid="184">
+                <button class="bg-stone-900 text-white px-12 py-5 rounded-full text-xl hover:bg-stone-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1" vid="185">
+                    <span class="editorial" vid="186">Download for iOS</span>
+                </button>
+                <button class="bg-transparent border border-stone-300 text-stone-900 px-12 py-5 rounded-full text-xl hover:bg-stone-100 transition-all" vid="187">
+                    <span class="editorial" vid="188">Read Whitepaper</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-stone-200 bg-white/40 backdrop-blur-md relative z-10" vid="189">
+        <div class="max-w-7xl mx-auto px-6 py-16" vid="190">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12" vid="191">
+                <div class="col-span-1 md:col-span-2 space-y-6" vid="192">
+                    <a href="#" class="flex items-center gap-2 group" vid="193">
+                        <div class="w-6 h-6 rounded-full bg-stone-900 flex items-center justify-center text-white" vid="194">
+                            <span class="text-[10px] font-bold font-sans" vid="195">A</span>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-stone-900 editorial" vid="196">Advanced Voice Assistant</span>
+                    </a>
+                    <p class="text-stone-500 max-w-sm font-light text-lg" vid="197">
+                        <span class="editorial block w-[117.6%]" vid="198">
+                            A clinical approach to conversational AI. Designed for peace of mind, built for the evolution of human cognition.
+                        </span>
+                    </p>
+                </div>
+                
+                <div vid="199">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-6 font-sans" vid="200">Resources</h4>
+                    <ul class="space-y-3" vid="201">
+                        <li vid="202"><a href="#research" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="203">Clinical Findings</a></li>
+                        <li vid="204"><a href="#" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="205">Whitepaper PDF</a></li>
+                        <li vid="206"><a href="#" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="207">API Technical Docs</a></li>
+                    </ul>
+                </div>
+                
+                <div vid="208">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-6 font-sans" vid="209">Company</h4>
+                    <ul class="space-y-3" vid="210">
+                        <li vid="211"><a href="#" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="212">Our Ethics</a></li>
+                        <li vid="213"><a href="#" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="214">Research Lab</a></li>
+                        <li vid="215"><a href="#" class="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl" vid="216">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-stone-200/50 flex flex-col md:flex-row justify-between items-center gap-4" vid="217">
+                <p class="text-stone-400 text-sm font-sans" vid="218">© 2024 Advanced Voice Assistant Inc. • Peer-Reviewed Since 2022</p>
+                <div class="flex gap-6" vid="219">
+                    <a href="#" class="text-stone-400 hover:text-stone-600 text-sm font-sans" vid="220">Privacy Policy</a>
+                    <a href="#" class="text-stone-400 hover:text-stone-600 text-sm font-sans" vid="221">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script vid="222">
+        lucide.createIcons();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: "0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
+    </script>
+
+
+</body></html>

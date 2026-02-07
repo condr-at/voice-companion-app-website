@@ -1,0 +1,349 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Settings — Advanced Voice Assistant</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="5"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" vid="8">
+    <script src="https://unpkg.com/lucide@latest" vid="9"></script>
+    <style vid="10">
+        :root {
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            --bg-color: #fcfbf9;
+            --text-color: #1c1917;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-serif);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .editorial {
+            font-family: var(--font-serif);
+            transform: scaleX(0.85);
+            transform-origin: left;
+            display: inline-block;
+        }
+
+        .font-sans {
+            font-family: var(--font-sans);
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            pointer-events: none;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 25s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        .orb-1 {
+            background: radial-gradient(circle, #ffdec7 0%, rgba(255,255,255,0) 70%);
+            width: 600px;
+            height: 600px;
+            top: -100px;
+            right: -100px;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, -30px); }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 20px -5px rgba(0,0,0,0.03);
+        }
+
+        .settings-nav-item.active {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: #e7e5e4;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #1c1917;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-orange-200 selection:text-orange-950" vid="11">
+
+    <div class="noise-overlay" vid="12"></div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" vid="13">
+        <div class="gradient-orb orb-1" vid="14"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-40 px-6 py-6" vid="15">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full" vid="16">
+            <a href="/" class="flex items-center gap-2 group" vid="17">
+                <div class="w-8 h-8 rounded-full bg-stone-900 flex items-center justify-center text-white" vid="18">
+                    <i data-lucide="mic" class="w-4 h-4" vid="19"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-stone-900 editorial" vid="20">Advanced Voice Assistant</span>
+            </a>
+            <div class="flex items-center gap-4" vid="21">
+                <button class="w-10 h-10 rounded-full glass border border-white/60 flex items-center justify-center text-stone-600 hover:text-stone-900 transition-colors" vid="22">
+                    <i data-lucide="bell" class="w-5 h-5" vid="23"></i>
+                </button>
+                <div class="w-10 h-10 rounded-full bg-stone-200 border border-stone-300 flex items-center justify-center overflow-hidden" vid="24">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" class="w-full h-full object-cover" vid="25">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 px-6 pb-20 max-w-7xl mx-auto flex gap-10" vid="26">
+        
+        
+        <aside class="w-64 flex-shrink-0" vid="27">
+            <h1 class="text-4xl text-stone-900 mb-8 editorial" vid="28">Preferences</h1>
+            <nav class="space-y-2" vid="29">
+                <a href="#voice" class="settings-nav-item active flex items-center gap-3 px-4 py-3 rounded-2xl transition-all group" vid="30">
+                    <i data-lucide="volume-2" class="w-5 h-5 text-stone-600" vid="31"></i>
+                    <span class="text-lg editorial font-medium" vid="32">Voice &amp; Tone</span>
+                </a>
+                <a href="#privacy" class="settings-nav-item flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-white/40 transition-all group" vid="33">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-stone-600" vid="34"></i>
+                    <span class="text-lg editorial" vid="35">Privacy &amp; Data</span>
+                </a>
+                <a href="#memory" class="settings-nav-item flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-white/40 transition-all group" vid="36">
+                    <i data-lucide="brain-circuit" class="w-5 h-5 text-stone-600" vid="37"></i>
+                    <span class="text-lg editorial" vid="38">Cognitive Memory</span>
+                </a>
+                <a href="#account" class="settings-nav-item flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-white/40 transition-all group" vid="39">
+                    <i data-lucide="user" class="w-5 h-5 text-stone-600" vid="40"></i>
+                    <span class="text-lg editorial" vid="41">Account</span>
+                </a>
+                <div class="pt-8 mt-8 border-t border-stone-200" vid="42">
+                    <button class="flex items-center gap-3 px-4 py-3 text-red-600/70 hover:text-red-600 transition-colors w-full" vid="43">
+                        <i data-lucide="log-out" class="w-5 h-5" vid="44"></i>
+                        <span class="text-lg editorial" vid="45">Sign Out</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        
+        <div class="flex-1 space-y-12" vid="46">
+            
+            
+            <section id="voice" class="glass-card rounded-[2.5rem] p-10 space-y-8" vid="47">
+                <div class="flex justify-between items-start" vid="48">
+                    <div vid="49">
+                        <h2 class="text-3xl text-stone-900 editorial" vid="50">Voice &amp; Personality</h2>
+                        <p class="text-stone-500 editorial text-lg" vid="51">Define how your companion sounds and reacts.</p>
+                    </div>
+                    <button class="bg-stone-900 text-stone-50 px-6 py-2 rounded-full text-lg editorial transition-transform hover:scale-105" vid="52">
+                        Preview Voice
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-10" vid="53">
+                    <div class="space-y-6" vid="54">
+                        <div vid="55">
+                            <label class="block text-stone-400 uppercase text-xs font-sans tracking-widest mb-4" vid="56">Selected Voice</label>
+                            <div class="grid grid-cols-2 gap-3" vid="57">
+                                <button class="p-4 rounded-2xl border-2 border-stone-900 bg-white flex flex-col items-center text-center" vid="58">
+                                    <span class="text-xl editorial font-bold" vid="59">Elowen</span>
+                                    <span class="text-sm text-stone-500 editorial" vid="60">Calm &amp; Poetic</span>
+                                </button>
+                                <button class="p-4 rounded-2xl border border-stone-200 bg-white/40 hover:bg-white/60 transition-colors flex flex-col items-center text-center" vid="61">
+                                    <span class="text-xl editorial font-bold" vid="62">Cillian</span>
+                                    <span class="text-sm text-stone-500 editorial" vid="63">Steady &amp; Warm</span>
+                                </button>
+                                <button class="p-4 rounded-2xl border border-stone-200 bg-white/40 hover:bg-white/60 transition-colors flex flex-col items-center text-center" vid="64">
+                                    <span class="text-xl editorial font-bold" vid="65">Juniper</span>
+                                    <span class="text-sm text-stone-500 editorial" vid="66">Curious &amp; Bright</span>
+                                </button>
+                                <button class="p-4 rounded-2xl border border-stone-200 bg-white/40 hover:bg-white/60 transition-colors flex flex-col items-center text-center" vid="67">
+                                    <span class="text-xl editorial font-bold" vid="68">Arthur</span>
+                                    <span class="text-sm text-stone-500 editorial" vid="69">Deep &amp; Scholarly</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8" vid="70">
+                        <div vid="71">
+                            <div class="flex justify-between mb-4" vid="72">
+                                <label class="text-stone-800 editorial text-xl" vid="73">Verbosity</label>
+                                <span class="text-stone-400 editorial" vid="74">Laconic — Chatty</span>
+                            </div>
+                            <input type="range" class="w-full" min="0" max="100" value="40" vid="75">
+                        </div>
+                        <div vid="76">
+                            <div class="flex justify-between mb-4" vid="77">
+                                <label class="text-stone-800 editorial text-xl" vid="78">Emotional Resonance</label>
+                                <span class="text-stone-400 editorial" vid="79">Logic — Empathy</span>
+                            </div>
+                            <input type="range" class="w-full" min="0" max="100" value="75" vid="80">
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-2xl glass border border-white/60" vid="81">
+                            <div vid="82">
+                                <span class="block editorial text-xl" vid="83">Humor &amp; Wit</span>
+                                <span class="text-stone-500 editorial text-sm" vid="84">Allows the AI to use irony and jokes</span>
+                            </div>
+                            <button class="w-12 h-6 rounded-full bg-stone-900 relative" vid="85">
+                                <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full" vid="86"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="memory" class="glass-card rounded-[2.5rem] p-10" vid="87">
+                <div class="flex items-center gap-4 mb-8" vid="88">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-700" vid="89">
+                        <i data-lucide="database" class="w-6 h-6" vid="90"></i>
+                    </div>
+                    <div vid="91">
+                        <h2 class="text-3xl text-stone-900 editorial" vid="92">Cognitive Memory</h2>
+                        <p class="text-stone-500 editorial text-lg" vid="93">On-device storage for your personal context.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6" vid="94">
+                    <div class="flex items-center justify-between p-6 rounded-[1.5rem] bg-white/40 border border-white/60" vid="95">
+                        <div vid="96">
+                            <h4 class="text-xl editorial text-stone-900 font-bold" vid="97">Current Storage Usage</h4>
+                            <p class="text-stone-500 editorial" vid="98">1.2 GB of 8 GB allocated (Neural Cache)</p>
+                        </div>
+                        <div class="w-48 h-2 bg-stone-200 rounded-full overflow-hidden" vid="99">
+                            <div class="bg-stone-900 h-full w-[15%]" vid="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" vid="101">
+                        <div class="p-6 rounded-[1.5rem] border border-stone-200 space-y-4" vid="102">
+                            <h4 class="text-xl editorial text-stone-900" vid="103">Remembered Topics</h4>
+                            <div class="flex flex-wrap gap-2" vid="104">
+                                <span class="px-3 py-1 bg-stone-100 rounded-full text-stone-600 editorial" vid="105">Childhood fears</span>
+                                <span class="px-3 py-1 bg-stone-100 rounded-full text-stone-600 editorial" vid="106">Morning routines</span>
+                                <span class="px-3 py-1 bg-stone-100 rounded-full text-stone-600 editorial" vid="107">Coffee preferences</span>
+                                <span class="px-3 py-1 bg-stone-100 rounded-full text-stone-600 editorial" vid="108">Work projects</span>
+                                <span class="px-3 py-1 bg-stone-100 rounded-full text-stone-600 editorial" vid="109">+12 more</span>
+                            </div>
+                            <button class="text-stone-500 hover:text-stone-900 editorial text-sm flex items-center gap-1" vid="110">
+                                View full history <i data-lucide="chevron-right" class="w-4 h-4" vid="111"></i>
+                            </button>
+                        </div>
+                        <div class="p-6 rounded-[1.5rem] border border-stone-200 flex flex-col justify-between" vid="112">
+                            <div vid="113">
+                                <h4 class="text-xl editorial text-stone-900" vid="114">Memory Lifespan</h4>
+                                <p class="text-stone-500 editorial text-sm" vid="115">How long the AI keeps personal details before asking for confirmation.</p>
+                            </div>
+                            <select class="mt-4 bg-transparent border-b border-stone-300 py-2 editorial text-lg outline-none" vid="116">
+                                <option vid="117">Permanent (Indefinite)</option>
+                                <option vid="118">Seasonal (3 Months)</option>
+                                <option vid="119">Session Only (24 Hours)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="privacy" class="glass-card rounded-[2.5rem] p-10 space-y-8" vid="120">
+                <div vid="121">
+                    <h2 class="text-3xl text-stone-900 editorial" vid="122">Privacy &amp; Security</h2>
+                    <p class="text-stone-500 editorial text-lg" vid="123">Your data is yours. Here is how we protect it.</p>
+                </div>
+
+                <div class="space-y-4" vid="124">
+                    <div class="flex items-center justify-between p-4 rounded-2xl glass border border-white/60" vid="125">
+                        <div class="flex gap-4 items-center" vid="126">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700" vid="127">
+                                <i data-lucide="shield-check" class="w-5 h-5" vid="128"></i>
+                            </div>
+                            <div vid="129">
+                                <span class="block editorial text-xl" vid="130">On-Device Processing Only</span>
+                                <span class="text-stone-500 editorial text-sm" vid="131">Prevent any network requests during speech analysis</span>
+                            </div>
+                        </div>
+                        <button class="w-12 h-6 rounded-full bg-emerald-500 relative" vid="132">
+                            <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full" vid="133"></span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 rounded-2xl glass border border-white/60" vid="134">
+                        <div class="flex gap-4 items-center" vid="135">
+                            <div class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-700" vid="136">
+                                <i data-lucide="eye-off" class="w-5 h-5" vid="137"></i>
+                            </div>
+                            <div vid="138">
+                                <span class="block editorial text-xl" vid="139">Incognito Mode</span>
+                                <span class="text-stone-500 editorial text-sm" vid="140">Don't save this session to the cognitive memory</span>
+                            </div>
+                        </div>
+                        <button class="w-12 h-6 rounded-full bg-stone-200 relative" vid="141">
+                            <span class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full" vid="142"></span>
+                        </button>
+                    </div>
+
+                    <div class="pt-6" vid="143">
+                        <button class="text-red-500 editorial text-lg flex items-center gap-2 hover:bg-red-50 px-4 py-2 rounded-xl transition-colors" vid="144">
+                            <i data-lucide="trash-2" class="w-5 h-5" vid="145"></i>
+                            Clear all local memories
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script vid="146">
+        lucide.createIcons();
+
+        
+        const navItems = document.querySelectorAll('.settings-nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+
+
+</body></html>
