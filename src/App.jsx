@@ -516,17 +516,64 @@ const App = () => {
           </div>
         </section>
 
-        <section className="py-20 text-center reveal">
-          <h2 className="text-6xl md:text-8xl text-stone-900 mb-12">
-            <span className="editorial-center">Ready to meet<br /><i className="text-stone-400">your companion?</i></span>
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-            <button className="bg-stone-900 text-white px-12 py-5 rounded-full text-xl hover:bg-stone-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
-              <span className="editorial">Download for iOS</span>
-            </button>
-            <button className="bg-transparent border border-stone-300 text-stone-900 px-12 py-5 rounded-full text-xl hover:bg-stone-100 transition-all">
-              <span className="editorial">Read Whitepaper</span>
-            </button>
+        <section id="manifesto" className="max-w-5xl mx-auto mb-32 text-center reveal">
+          <div className="glass p-12 md:p-20 rounded-[3rem] relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/40 to-transparent"></div>
+
+            <div className="relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-stone-400 mb-8 opacity-50"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path></svg>
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight mb-10">
+                <span className="editorial-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
+              </h2>
+
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-white/50">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="User" className="w-full h-full object-cover" />
+                </div>
+                <div className="text-left">
+                  <div className="text-lg font-medium text-stone-900 editorial">Elena R.</div>
+                  <div className="text-base text-stone-500 editorial">Beta Explorer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-7xl mx-auto mb-20 reveal">
+          <div className="bg-stone-900 rounded-[2.5rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
+
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/20 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
+
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="text-6xl md:text-8xl font-light text-[#F3F2EF] mb-8 tracking-tight">
+                <span className="editorial-center">Ready to meet<br />your companion?</span>
+              </h2>
+              <p className="text-2xl text-stone-400 mb-12 font-light">
+                <span className="editorial-center">
+                  Experience the calm of a technology that works for you, stays with you, and never sells you out.
+                </span>
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <button className="bg-[#F3F2EF] text-stone-900 px-8 py-4 rounded-full text-xl hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 editorial">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.98 1.07-3.11-1.04.05-2.29.69-3.02 1.55-.67.78-1.26 2.05-1.11 3.17 1.16.09 2.34-.78 3.06-1.61z"></path>
+                  </svg>
+                  Download for iOS
+                </button>
+                <button className="bg-transparent border border-stone-700 text-[#F3F2EF] px-8 py-4 rounded-full text-xl hover:bg-stone-800 transition-all editorial">
+                  Read Research Paper
+                </button>
+              </div>
+
+              <div className="mt-12 flex justify-center items-center gap-8 opacity-50">
+                <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">v1.0.4 Stable</span>
+                <div className="w-1 h-1 bg-stone-600 rounded-full"></div>
+                <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">Requires iOS 17+</span>
+              </div>
+            </div>
           </div>
         </section>
       </main>
