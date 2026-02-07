@@ -3,12 +3,12 @@ import Card from './ui/Card';
 import { IconPulse, IconBolt, IconMic } from './ui/Icons';
 
 const FeatureItem = ({ icon: Icon, title, description, delay }) => (
-    <Card className="justify-between min-h-[400px]" delay={delay}>
+    <Card className="justify-between min-h-[320px]" delay={delay}>
         <div>
-            <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-8 shadow-sm">
+            <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-6 shadow-sm">
                 <Icon className="w-8 h-8" />
             </div>
-            <h3 className="text-4xl text-stone-900 mb-4 font-normal">
+            <h3 className="text-4xl text-stone-900 mb-2 font-normal">
                 <span className="editorial">{title}</span>
             </h3>
         </div>
