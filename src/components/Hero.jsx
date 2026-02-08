@@ -24,14 +24,14 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style={{ transitionDelay: '400ms' }}>
                 <Button variant="heroPrimary" icon={IconMagic}>
-                    Start Speaking
+                    Join Beta
                 </Button>
                 <Button
                     variant="heroGlass"
                     icon={IconFileText}
                     onClick={() => scrollToSection('#research')}
                 >
-                    Research Papers
+                    Research
                 </Button>
             </div>
         </section>

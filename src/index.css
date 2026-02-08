@@ -22,6 +22,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 /* Compress Garamond by default for headings and serif text */
 h1,
 h2,

@@ -24,12 +24,12 @@ const CallToAction = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
-                        <Button variant="ctaPrimary" icon={AppleIcon}>
-                            Download for iOS
+                        <Button variant="ctaPrimary">
+                            Join Beta
                         </Button>
-                        <Button variant="ctaOutline">
+                        {/* <Button variant="ctaOutline">
                             Read Research Paper
-                        </Button>
+                        </Button> */}
                     </div>
 
                     <div className="mt-12 flex justify-center items-center gap-8 opacity-50">

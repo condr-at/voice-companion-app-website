@@ -63,7 +63,7 @@ const Navigation = () => {
                     </div>
 
                     <div className="hidden md:block">
-                        <Button variant="nav" onClick={() => handleNavClick('#cta')}>Download Beta</Button>
+                        <Button variant="nav" onClick={() => handleNavClick('#cta')}>Join Beta</Button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -94,7 +94,7 @@ const Navigation = () => {
                         </a>
                     ))}
                     <div className="mt-4 w-full max-w-xs">
-                        <Button variant="nav" onClick={() => handleNavClick('#cta')} className="w-full py-4 text-lg">Download Beta</Button>
+                        <Button variant="nav" onClick={() => handleNavClick('#cta')} className="w-full py-4 text-lg">Join Beta</Button>
                     </div>
                 </div>
             </div>
