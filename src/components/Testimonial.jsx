@@ -11,8 +11,8 @@ const Testimonial = () => {
                 <div className="relative z-10">
                     <IconQuote className="mx-auto text-stone-400 mb-8 opacity-50" />
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10">
-                        <span className="editorial-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10 no-squeeze editorial-fit-wrap">
+                        <span className="editorial-fit-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
                     </h2>
 
                     <div className="flex items-center justify-center gap-4">

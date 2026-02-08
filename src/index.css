@@ -82,6 +82,28 @@ h6 {
     transform-origin: left;
 }
 
+/* Squeezed text with expanded layout width to reduce early wrapping */
+.editorial-fit {
+    font-family: var(--font-serif);
+    transform: scaleX(0.85);
+    transform-origin: left;
+    display: inline-block;
+    width: calc(100% / 0.85);
+}
+
+.editorial-fit-center {
+    font-family: var(--font-serif);
+    transform: scaleX(0.85);
+    transform-origin: center;
+    display: inline-block;
+    width: calc(100% / 0.85);
+}
+
+/* Wraps editorial-fit to prevent visual overflow */
+.editorial-fit-wrap {
+    overflow: hidden;
+}
+
 .noise-overlay {
     position: fixed;
     top: 0;

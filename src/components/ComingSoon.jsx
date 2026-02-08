@@ -10,8 +10,8 @@ const ComingSoonItem = ({ icon: Icon, title, description, delay }) => (
             <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-6 shadow-sm">
                 <Icon className="w-8 h-8" />
             </div>
-            <h3 className="text-5xl text-stone-900 mb-2 font-normal no-squeeze">
-                <span className="editorial">{title}</span>
+            <h3 className="text-5xl text-stone-900 mb-2 font-normal no-squeeze editorial-fit-wrap">
+                <span className="editorial-fit">{title}</span>
             </h3>
         </div>
         <p className="text-lg text-stone-600 leading-relaxed font-light font-sans">

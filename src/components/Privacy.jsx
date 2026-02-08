@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './ui/Card';
-import { IconSmartphone, IconEyeOff, IconCloudOff } from './ui/Icons';
+import { IconSmartphone, IconEyeOff, IconUnplug } from './ui/Icons';
 
 const Privacy = () => {
     return (
@@ -40,7 +40,7 @@ const Privacy = () => {
                         <div className="aspect-square bg-white/20 rounded-[2.5rem] border border-white/40 flex items-center justify-center relative overflow-hidden backdrop-blur-sm shadow-inner">
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="w-40 h-40 bg-gradient-to-br from-stone-100 to-white rounded-full flex items-center justify-center shadow-2xl relative z-20 border border-white/80">
-                                    <IconCloudOff className="text-stone-800 opacity-80" />
+                                    <IconUnplug className="text-stone-800 opacity-80" />
                                 </div>
                                 <div className="absolute w-64 h-64 border border-stone-800/10 rounded-full animate-spin-slow">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-4 h-4 bg-stone-800 rounded-full"></div>

@@ -19,7 +19,7 @@ const Research = () => {
                             <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Generative AI Support</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
-                        <h3 className="text-5xl text-stone-900 no-squeeze"><span className="editorial">Socially-Oriented Interaction</span></h3>
+                        <h3 className="text-5xl text-stone-900 no-squeeze editorial-fit-wrap"><span className="editorial-fit">Socially-Oriented Interaction</span></h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
                             Large-scale analysis of 6,314 participants confirms that GenAI chatbots significantly mitigate negative affective states <span className="text-stone-900 font-semibold">(ES = 0.30)</span>. Socially-oriented bots for emotional support outperformed task-oriented systems.
                         </p>
@@ -35,7 +35,7 @@ const Research = () => {
                             <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Adolescent Psychology</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
-                        <h3 className="text-5xl text-stone-900 no-squeeze"><span className="editorial">Youth Distress Mitigation</span></h3>
+                        <h3 className="text-5xl text-stone-900 no-squeeze editorial-fit-wrap"><span className="editorial-fit">Youth Distress Mitigation</span></h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
                             A systematic study of 29,637 participants shows a consistent reduction in <span className="text-stone-900 font-semibold">psychological distress (SMD = -0.35)</span> among youth. Generative AI models were highlighted as a particularly promising frontier for engagement.
                         </p>
