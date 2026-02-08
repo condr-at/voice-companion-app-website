@@ -52,7 +52,7 @@ const Navigation = () => {
                     </a>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-8">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
@@ -65,20 +65,20 @@ const Navigation = () => {
                         ))}
                     </div>
 
-                    <div className="hidden md:block">
+                    <div className="hidden lg:block">
                         <Button
                             variant="nav"
                             href={BETA_FORM_URL}
                             target="_blank"
                             rel="noreferrer noopener"
                         >
-                            Join Beta
+                            Join Beta (Android)
                         </Button>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden p-2 text-stone-900 hover:bg-stone-100 rounded-full transition-colors focus:outline-none"
+                        className="lg:hidden p-2 text-stone-900 hover:bg-stone-100 rounded-full transition-colors focus:outline-none"
                         onClick={toggleMenu}
                         aria-label="Toggle menu"
                     >
@@ -89,7 +89,7 @@ const Navigation = () => {
 
             {/* Mobile Navigation Overlay */}
             <div
-                className={`fixed inset-0 bg-stone-50/95 backdrop-blur-xl z-[-1] md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                className={`fixed inset-0 bg-stone-50/95 backdrop-blur-xl z-[-1] lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
                     }`}
             >
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
@@ -111,7 +111,7 @@ const Navigation = () => {
                             rel="noreferrer noopener"
                             className="w-full py-4 text-lg"
                         >
-                            Join Beta
+                            Join Beta (Android)
                         </Button>
                     </div>
                 </div>

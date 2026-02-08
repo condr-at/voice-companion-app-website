@@ -31,7 +31,7 @@ const CallToAction = () => {
                             target="_blank"
                             rel="noreferrer noopener"
                         >
-                            Join Beta
+                            Join Beta (Android)
                         </Button>
                         {/* <Button variant="ctaOutline">
                             Read Research Paper

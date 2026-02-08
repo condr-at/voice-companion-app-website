@@ -39,7 +39,7 @@ const Pricing = () => {
                             <div className="text-6xl md:text-7xl text-stone-900 mt-4 mb-2 editorial-fit-center">Free</div>
                             <div className="text-base text-stone-500 font-sans mb-8">for early access</div>
                             <Button className="mx-auto" variant="heroPrimary" onClick={() => scrollToSection('#cta')}>
-                                Join Beta
+                                Join Beta (Android)
                             </Button>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ const Hero = () => {
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    Join Beta
+                    Join Beta (Android)
                 </Button>
                 <Button
                     variant="heroGlass"

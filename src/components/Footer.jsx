@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IconClose, IconSection } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import { BETA_FORM_URL } from '../lib/links';
@@ -78,7 +79,7 @@ const Footer = () => {
                                     rel="noreferrer noopener"
                                     className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
                                 >
-                                    Join Beta
+                                    Join Beta (Android)
                                 </a>
                             </li>
                         </ul>
@@ -119,7 +120,7 @@ const Footer = () => {
                 </div>
 
                 <div className="mt-16 pt-8 border-t border-stone-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-stone-400 text-sm font-sans">© 2024 Voice Companion App. • Peer-Reviewed Since 2026</p>
+                    <p className="text-stone-400 text-sm font-sans">© 2026 Voice Companion App. • Peer-Reviewed Since 2025</p>
                     <div className="flex gap-6">
                         <button
                             type="button"
@@ -134,13 +135,13 @@ const Footer = () => {
                             rel="noreferrer noopener"
                             className="text-stone-400 hover:text-stone-600 text-sm font-sans"
                         >
-                            Join Beta
+                            Join Beta (Android)
                         </a>
                     </div>
                 </div>
             </div>
 
-            {privacyOpen && (
+            {privacyOpen && typeof document !== 'undefined' && createPortal(
                 <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-8">
                     <button
                         type="button"
@@ -195,13 +196,14 @@ const Footer = () => {
                                     rel="noreferrer noopener"
                                     className="underline decoration-stone-300 underline-offset-4"
                                 >
-                                    Join Beta Form
+                                    Join Beta (Android)
                                 </a>
                                 .
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </footer>
     );
