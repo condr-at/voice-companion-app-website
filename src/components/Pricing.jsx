@@ -2,6 +2,7 @@ import React from 'react';
 import SectionHeader from './ui/SectionHeader';
 import Card from './ui/Card';
 import Button from './ui/Button';
+import JoinBetaLabel from './ui/JoinBetaLabel';
 import { scrollToSection } from '../utils/scroll';
 
 const Pricing = () => {
@@ -36,10 +37,12 @@ const Pricing = () => {
 
                         <div className="bg-white/60 border border-white/70 rounded-[2rem] p-10 text-center shadow-lg">
                             <div className="text-sm uppercase tracking-widest text-stone-500 font-sans">Beta</div>
-                            <div className="text-6xl md:text-7xl text-stone-900 mt-4 mb-2 editorial-fit-center">Free</div>
+                            <div className="text-6xl md:text-7xl text-stone-900 mt-4 mb-2 editorial-fit-wrap">
+                                <span className="editorial-fit-center">Free</span>
+                            </div>
                             <div className="text-base text-stone-500 font-sans mb-8">for early access</div>
                             <Button className="mx-auto" variant="heroPrimary" onClick={() => scrollToSection('#cta')}>
-                                Join Beta (Android)
+                                <JoinBetaLabel />
                             </Button>
                         </div>
                     </div>

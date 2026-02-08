@@ -42,23 +42,23 @@ const Footer = () => {
                             <div className="w-6 h-6 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
                                 <IconSection className="text-stone-900" size={16} />
                             </div>
-                            <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
+                            <span className="text-3xl md:text-2xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
                         </a>
-                        <p className="text-stone-500 max-w-sm font-light text-lg">
-                            <span className="editorial block w-[117.6%]">
+                        <p className="text-stone-500 max-w-sm font-light text-2xl md:text-xl">
+                            <span className="editorial block">
                                 A personal approach to conversational AI. Designed for peace of mind, built for the evolution of human connection.
                             </span>
                         </p>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Resources</h4>
+                        <h4 className="text-base md:text-sm font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Resources</h4>
                         <ul className="space-y-3">
                             <li>
                                 <a
                                     href="#research"
                                     onClick={(event) => handleSectionLink(event, '#research')}
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
                                     Research Findings
                                 </a>
@@ -67,7 +67,7 @@ const Footer = () => {
                                 <a
                                     href="#privacy_manifesto"
                                     onClick={(event) => handleSectionLink(event, '#privacy_manifesto')}
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
                                     Privacy Manifesto
                                 </a>
@@ -77,22 +77,22 @@ const Footer = () => {
                                     href={BETA_FORM_URL}
                                     target="_blank"
                                     rel="noreferrer noopener"
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
-                                    Join Beta (Android)
+                                    Join Beta
                                 </a>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Company</h4>
+                        <h4 className="text-base md:text-sm font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Company</h4>
                         <ul className="space-y-3">
                             <li>
                                 <a
                                     href="#features"
                                     onClick={(event) => handleSectionLink(event, '#features')}
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
                                     Features
                                 </a>
@@ -101,7 +101,7 @@ const Footer = () => {
                                 <a
                                     href="#pricing"
                                     onClick={(event) => handleSectionLink(event, '#pricing')}
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
                                     Pricing
                                 </a>
@@ -110,7 +110,7 @@ const Footer = () => {
                                 <a
                                     href="#faq"
                                     onClick={(event) => handleSectionLink(event, '#faq')}
-                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl"
+                                    className="text-stone-600 hover:text-stone-900 transition-colors editorial text-3xl md:text-2xl"
                                 >
                                     FAQ
                                 </a>
@@ -135,7 +135,7 @@ const Footer = () => {
                             rel="noreferrer noopener"
                             className="text-stone-400 hover:text-stone-600 text-sm font-sans"
                         >
-                            Join Beta (Android)
+                            Join Beta
                         </a>
                     </div>
                 </div>
@@ -196,7 +196,7 @@ const Footer = () => {
                                     rel="noreferrer noopener"
                                     className="underline decoration-stone-300 underline-offset-4"
                                 >
-                                    Join Beta (Android)
+                                    Join Beta
                                 </a>
                                 .
                             </p>

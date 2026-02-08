@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IconMenu, IconClose, IconSection } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
+import JoinBetaLabel from './ui/JoinBetaLabel';
 import { BETA_FORM_URL } from '../lib/links';
 
 const Navigation = () => {
@@ -72,7 +73,7 @@ const Navigation = () => {
                             target="_blank"
                             rel="noreferrer noopener"
                         >
-                            Join Beta (Android)
+                            <JoinBetaLabel />
                         </Button>
                     </div>
 
@@ -111,7 +112,7 @@ const Navigation = () => {
                             rel="noreferrer noopener"
                             className="w-full py-4 text-lg"
                         >
-                            Join Beta (Android)
+                            <JoinBetaLabel />
                         </Button>
                     </div>
                 </div>

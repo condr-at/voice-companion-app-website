@@ -3,6 +3,7 @@ import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 import Badge from './ui/Badge';
 import { IconUserPlus, IconGraduationCap } from './ui/Icons';
+import JoinBetaLabel from './ui/JoinBetaLabel';
 import { BETA_FORM_URL } from '../lib/links';
 
 const Hero = () => {
@@ -31,7 +32,7 @@ const Hero = () => {
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    Join Beta (Android)
+                    <JoinBetaLabel />
                 </Button>
                 <Button
                     variant="heroGlass"
