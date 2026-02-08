@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './ui/Card';
 import SectionHeader from './ui/SectionHeader';
-import { IconPulse, IconBolt, IconMic } from './ui/Icons';
+import { IconOffline, IconFlow, IconStories } from './ui/Icons';
 
 const FeatureItem = ({ icon: Icon, title, description, delay }) => (
     <Card className="justify-between min-h-[320px]" delay={delay}>
@@ -24,27 +24,27 @@ const Features = () => {
         <section id="features" className="py-20 relative z-10">
             <div className="max-w-7xl mx-auto">
                 <SectionHeader
-                    title="Everything local."
-                    italicPart="Built for privacy."
-                    description="Your conversations are yours alone. No clouds, no servers, no trade-offs. Powered by the Neural Engine on your device."
+                    title="Always by your side."
+                    italicPart="Built for trust."
+                    description="Talk freely, whenever you need. Every word stays local, every memory stays yours. No clouds, no servers, just genuine connection."
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <FeatureItem
-                        icon={IconPulse}
-                        title="True Offline"
-                        description="Powered entirely by the Neural Engine. Your data never leaves your phone. Works in the subway, on a flight, or in the deep woods."
+                        icon={IconOffline}
+                        title="Always there"
+                        description="In the middle of a flight or deep in the woods—your companion never needs a signal. It’s always there when you need to talk."
                         delay="0ms"
                     />
                     <FeatureItem
-                        icon={IconBolt}
-                        title="Real-time"
-                        description="Conversations happen at the speed of thought. No 'processing' pauses. Interrupt, laugh, and speak naturally just like with a friend."
+                        icon={IconFlow}
+                        title="Natural flow"
+                        description="Zero lag, zero processing pauses. Interrupt, laugh, or whisper—it follows the natural flow of your thoughts, not the speed of your internet."
                         delay="100ms"
                     />
                     <FeatureItem
-                        icon={IconMic}
-                        title="Infinite Memory"
-                        description="It remembers every conversation, every detail, and context from months ago. It builds a deep, evolving understanding of who you are."
+                        icon={IconStories}
+                        title="A shared history"
+                        description="It doesn't just store data; it remembers your stories. It builds a deep understanding of your world, evolving with you through every conversation."
                         delay="200ms"
                     />
                 </div>

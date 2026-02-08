@@ -15,7 +15,7 @@ const Footer = () => {
                         </a>
                         <p className="text-stone-500 max-w-sm font-light text-lg">
                             <span className="editorial block w-[117.6%]">
-                                A clinical approach to conversational AI. Designed for peace of mind, built for the evolution of human cognition.
+                                A personal approach to conversational AI. Designed for peace of mind, built for the evolution of human connection.
                             </span>
                         </p>
                     </div>
@@ -23,7 +23,7 @@ const Footer = () => {
                     <div>
                         <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Resources</h4>
                         <ul className="space-y-3">
-                            <li><a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Clinical Findings</a></li>
+                            <li><a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Research Findings</a></li>
                             <li><a href="#" className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Whitepaper PDF</a></li>
                             <li><a href="#" className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">API Technical Docs</a></li>
                         </ul>

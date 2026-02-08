@@ -14,12 +14,12 @@ const Hero = () => {
 
 
             <h1 className="text-7xl md:text-9xl font-light text-stone-900 leading-[0.85] tracking-tight reveal" style={{ transitionDelay: '100ms' }}>
-                <span className="editorial-center block">The silent witness</span>
-                <span className="editorial-center block italic text-stone-500">to your life.</span>
+                I'm here to listen.<br />
+                <em className="italic text-stone-500">Always.</em>
             </h1>
 
             <p className="text-xl md:text-2xl font-light text-stone-600 max-w-2xl mx-auto leading-relaxed mt-8 reveal font-sans" style={{ transitionDelay: '200ms' }}>
-                A clinical-grade conversational agent designed to enhance cognitive performance and emotional regulation through persistent, on-device memory.
+                I'm your companion that lives right on your phone. Always here for you. Without any servers and internet. I remember your stories, understand your world, and keep every word strictly between us.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style={{ transitionDelay: '400ms' }}>

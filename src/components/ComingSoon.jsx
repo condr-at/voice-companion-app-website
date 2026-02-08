@@ -27,23 +27,23 @@ const ComingSoon = () => {
                 <div className="flex flex-col items-start">
                     <Badge className="mb-6">Coming Soon</Badge>
                     <SectionHeader
-                        title="Expanding"
-                        italicPart="their memory."
-                        description="Soon, they'll understand images and documents—adding new layers to your shared memory."
+                        title="Expanding my"
+                        italicPart="knowledge of you."
+                        description="Soon, I'll understand images and documents—adding new layers to our shared story."
                     />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ComingSoonItem
                         icon={IconImage}
-                        title="Visual Context"
-                        description="Show them a photo or image during your conversation. Discuss what you see, get insights, and build visual memories together."
+                        title="Your world visually"
+                        description="Show me a photo or image during our conversation. I'll understand it and we'll discuss it together."
                         delay="100ms"
                     />
                     <ComingSoonItem
                         icon={IconFileText}
-                        title="Document Memory"
-                        description="Share text files—your journal entries, notes, wishlists, ideas. They'll remember it all, connecting the threads of your thoughts."
+                        title="Your life story"
+                        description="Share text files—your journal entries, notes, wishlists, ideas. I'll remember it all."
                         delay="200ms"
                     />
                 </div>

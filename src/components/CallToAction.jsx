@@ -20,7 +20,7 @@ const CallToAction = () => {
                         <span className="editorial-center">Ready to meet<br />your companion?</span>
                     </h2>
                     <p className="text-xl md:text-2xl text-stone-400 mb-12 font-light font-sans">
-                        Experience the calm of a technology that works for you, stays with you, and never sells you out.
+                        Experience the calm of a technology that works for you, stays with you, and remains entirely yours.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -33,9 +33,9 @@ const CallToAction = () => {
                     </div>
 
                     <div className="mt-12 flex justify-center items-center gap-8 opacity-50">
-                        <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">v1.0.4 Stable</span>
+                        <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">v0.0.4 Beta</span>
                         <div className="w-1 h-1 bg-stone-600 rounded-full"></div>
-                        <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">Requires iOS 17+</span>
+                        <span className="text-sm text-stone-400 font-sans uppercase tracking-widest">Reqs: Android 14+, 6 GB RAM</span>
                     </div>
                 </div>
             </div>

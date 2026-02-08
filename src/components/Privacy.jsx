@@ -6,19 +6,19 @@ const Privacy = () => {
     return (
         <section id="privacy_manifesto" className="py-20 relative z-10">
             <div className="max-w-7xl mx-auto">
-                <Card className="p-12 md:p-24 relative overflow-hidden" delay="0ms">
+                <Card className="p-10 md:p-20 relative overflow-hidden" delay="0ms">
                     <div className="absolute inset-0 opacity-40 pointer-events-none">
                         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-100 rounded-full blur-[80px] mix-blend-multiply"></div>
                         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-[80px] mix-blend-multiply"></div>
                     </div>
 
-                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
                         <div className="space-y-10">
                             <h2 className="text-5xl md:text-6xl text-stone-900 leading-[1.1]">
-                                Intimacy demands <em className="text-stone-500 italic">exceptional privacy</em>
+                                Safe to be <em className="text-stone-500 italic">vulnerable</em>
                             </h2>
                             <p className="text-xl text-stone-700 font-light leading-relaxed font-sans">
-                                Intimate data requires sovereign storage. By executing the inference lifecycle entirely within the secure enclave, we ensure zero leakage of psychological state data.
+                                To truly speak your mind, you need to know you're alone. Every word, every reflection, and every secret stays locked inside your device. Not because it’s "secure", but because it’s yours.
                             </p>
 
                             <div className="space-y-4 pt-4">
@@ -26,13 +26,13 @@ const Privacy = () => {
                                     <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60">
                                         <IconShield className="text-stone-800" />
                                     </div>
-                                    <span className="text-lg text-stone-800 font-sans font-normal">Zero cloud-side telemetry or logging</span>
+                                    <span className="text-lg text-stone-800 font-sans font-normal">Nothing ever leaves your phone</span>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60">
                                         <IconLock className="text-stone-800" />
                                     </div>
-                                    <span className="text-lg text-stone-800 font-sans font-normal">End-to-end local vector encryption</span>
+                                    <span className="text-lg text-stone-800 font-sans font-normal">Your reflections are for your eyes only</span>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ const Privacy = () => {
                                 </div>
                             </div>
                             <div className="absolute bottom-10 text-center w-full z-20">
-                                <p className="text-sm font-sans font-normal text-stone-500 uppercase tracking-widest">On-Device Sovereign AI</p>
+                                <p className="text-sm font-sans text-stone-500 uppercase tracking-widest">Private & offline by design.</p>
                             </div>
                         </div>
                     </div>

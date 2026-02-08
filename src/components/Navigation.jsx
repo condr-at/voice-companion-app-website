@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu as MenuIcon, X } from 'lucide-react';
+import { IconMenu, IconClose } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 
@@ -72,7 +72,7 @@ const Navigation = () => {
                         onClick={toggleMenu}
                         aria-label="Toggle menu"
                     >
-                        {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
+                        {isOpen ? <IconClose /> : <IconMenu />}
                     </button>
                 </div>
             </div>

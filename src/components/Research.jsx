@@ -23,7 +23,7 @@ const Research = () => {
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
                             Large-scale analysis of 6,314 participants confirms that GenAI chatbots significantly mitigate negative affective states <span className="text-stone-900 font-semibold">(ES = 0.30)</span>. Socially-oriented bots for emotional support outperformed task-oriented systems.
                         </p>
-                        <div className="pt-6 border-t border-stone-100">
+                        <div className="mt-auto pt-6 border-t border-stone-100">
                             <p className="text-sm italic text-stone-400 font-sans leading-snug">
                                 Citation: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12707440/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-600 underline decoration-stone-200 underline-offset-4 transition-colors">Zhang et al. (2025). The efficacy of generative AI chatbots on mental health outcomes. PMC12707440.</a>
                             </p>
@@ -39,7 +39,7 @@ const Research = () => {
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
                             A systematic study of 29,637 participants shows a consistent reduction in <span className="text-stone-900 font-semibold">psychological distress (SMD = -0.35)</span> among youth. Generative AI models were highlighted as a particularly promising frontier for engagement.
                         </p>
-                        <div className="pt-6 border-t border-stone-100">
+                        <div className="mt-auto pt-6 border-t border-stone-100">
                             <p className="text-sm italic text-stone-400 font-sans leading-snug">
                                 Citation: <a href="https://pubmed.ncbi.nlm.nih.gov/41313175/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-600 underline decoration-stone-200 underline-offset-4 transition-colors">Lyu et al. (2025). Digital conversational agents for psychological distress in youth. PubMed 41313175.</a>
                             </p>
@@ -50,16 +50,13 @@ const Research = () => {
                 <div className="mt-12 glass-card p-12 rounded-[3rem] data-grid reveal" style={{ transitionDelay: '300ms' }}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">0.30</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Effect Size (Affective Mitigation)</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial-center">30% Less Stress</div>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">6,314</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Participants in GenAI Studies</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial-center">6,314 Participants</div>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">29,637</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Youth Health Data Points</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial-center">29,637 Evidences</div>
                         </div>
                     </div>
                 </div>

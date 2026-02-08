@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { IconQuote } from './ui/Icons';
 import Card from './ui/Card';
 
 const Testimonial = () => {
@@ -9,7 +9,7 @@ const Testimonial = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/40 to-transparent"></div>
 
                 <div className="relative z-10">
-                    <Quote className="mx-auto text-stone-400 mb-8 opacity-50 w-10 h-10" />
+                    <IconQuote className="mx-auto text-stone-400 mb-8 opacity-50" />
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10">
                         <span className="editorial-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
@@ -20,8 +20,8 @@ const Testimonial = () => {
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="User" className="w-full h-full object-cover" />
                         </div>
                         <div className="text-left">
-                            <div className="text-lg font-medium text-stone-900 editorial">Elena R.</div>
-                            <div className="text-base text-stone-500 editorial">Beta Explorer</div>
+                            <div className="text-lg font-medium text-stone-900 editorial">Conrad K.</div>
+                            <div className="text-base text-stone-500 editorial">Creator and early explorer</div>
                         </div>
                     </div>
                 </div>
