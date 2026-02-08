@@ -89,19 +89,27 @@ h6 {
     transform-origin: left;
     display: inline-block;
     width: calc(100% / 0.85);
+    line-height: 1.1;
 }
 
 .editorial-fit-center {
     font-family: var(--font-serif);
-    transform: scaleX(0.85);
-    transform-origin: center;
     display: inline-block;
     width: calc(100% / 0.85);
+    transform: scaleX(0.85);
+    transform-origin: center;
+    line-height: 1.1;
+    /* Compensate expanded width so it grows from center without shifting layout */
+    margin-inline: calc((1 - (1 / 0.85)) * 50%);
 }
 
 /* Wraps editorial-fit to prevent visual overflow */
 .editorial-fit-wrap {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
+    /* Avoid clipping ascenders/descenders while keeping layout unchanged */
+    padding-block: 0.06em;
+    margin-block: -0.06em;
 }
 
 .noise-overlay {

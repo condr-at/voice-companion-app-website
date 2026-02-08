@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeader from './ui/SectionHeader';
 import Card from './ui/Card';
 import Badge from './ui/Badge';
-import { IconScanEye, IconScrollText } from './ui/Icons';
+import { IconScanEye, IconScrollText, IconBird } from './ui/Icons';
 
 const ComingSoonItem = ({ icon: Icon, title, description, delay }) => (
     <Card className="justify-between min-h-[320px]" delay={delay}>
@@ -27,13 +27,12 @@ const ComingSoon = () => {
                 <div className="flex flex-col items-start">
                     <Badge className="mb-6">Coming Soon</Badge>
                     <SectionHeader
-                        title="Expanding my"
-                        italicPart="knowledge of you."
+                        title="Expanding"
+                        italicPart="my precence."
                         description="Soon, I'll understand images and documents—adding new layers to our shared story."
                     />
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ComingSoonItem
                         icon={IconScanEye}
                         title="Your world visually"
@@ -43,8 +42,14 @@ const ComingSoon = () => {
                     <ComingSoonItem
                         icon={IconScrollText}
                         title="Your life story"
-                        description="Share text files—your journal entries, notes, wishlists, ideas. I'll remember it all."
+                        description="Share text files—your journal entries, notes, wishlists, ideas and more. I'll remember it all."
                         delay="200ms"
+                    />
+                    <ComingSoonItem
+                        icon={IconBird}
+                        title="More freedom"
+                        description="Proactive insights based on my scheduled checks of a calendar, alarms, contacts, location, etc."
+                        delay="300ms"
                     />
                 </div>
             </div>

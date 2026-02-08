@@ -3,12 +3,16 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Research from './components/Research';
 import Features from './components/Features';
+import Pricing from './components/Pricing';
 import Privacy from './components/Privacy';
 import ComingSoon from './components/ComingSoon';
+import FAQ from './components/FAQ';
 import Testimonial from './components/Testimonial';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import Background from './components/Background';
+import CookieToast from './components/CookieToast';
+import { applyTypograf } from './lib/typograf';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +35,8 @@ const App = () => {
 
     document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
 
+    applyTypograf(document.body);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -40,17 +46,20 @@ const App = () => {
     <div className="min-h-screen relative selection:bg-orange-200 selection:text-orange-950">
       <Background />
       <Navigation />
+      <CookieToast />
 
       <main className="relative z-10 pt-40 px-6 pb-20">
         <Hero />
         <Research />
         <Features />
+        <Pricing />
         <Privacy />
         <ComingSoon />
         <Testimonial />
         <CallToAction />
       </main>
 
+      <FAQ />
       <Footer />
     </div>
   );

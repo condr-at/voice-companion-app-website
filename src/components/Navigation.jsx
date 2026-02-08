@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { IconMenu, IconClose } from './ui/Icons';
+import { IconMenu, IconClose, IconSection } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
+import { BETA_FORM_URL } from '../lib/links';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,10 @@ const Navigation = () => {
     const navItems = [
         { name: 'Research', href: '#research' },
         { name: 'Features', href: '#features' },
+        { name: 'Pricing', href: '#pricing' },
         { name: 'Manifesto', href: '#privacy_manifesto' },
         { name: 'Coming Soon', href: '#coming-soon' },
+        { name: 'FAQ', href: '#faq' },
     ];
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -43,7 +46,7 @@ const Navigation = () => {
                         onClick={(e) => { e.preventDefault(); handleNavClick('#'); }}
                     >
                         <div className="w-8 h-8 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
-                            <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
+                            <IconSection className="text-stone-900" />
                         </div>
                         <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion</span>
                     </a>
@@ -63,7 +66,14 @@ const Navigation = () => {
                     </div>
 
                     <div className="hidden md:block">
-                        <Button variant="nav" onClick={() => handleNavClick('#cta')}>Join Beta</Button>
+                        <Button
+                            variant="nav"
+                            href={BETA_FORM_URL}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            Join Beta
+                        </Button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -94,7 +104,15 @@ const Navigation = () => {
                         </a>
                     ))}
                     <div className="mt-4 w-full max-w-xs">
-                        <Button variant="nav" onClick={() => handleNavClick('#cta')} className="w-full py-4 text-lg">Join Beta</Button>
+                        <Button
+                            variant="nav"
+                            href={BETA_FORM_URL}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="w-full py-4 text-lg"
+                        >
+                            Join Beta
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -103,4 +121,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-

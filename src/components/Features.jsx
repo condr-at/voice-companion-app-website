@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './ui/Card';
 import SectionHeader from './ui/SectionHeader';
-import { IconCoffee, IconSpeech, IconTelescope } from './ui/Icons';
+import { IconCoffee, IconSpeech, IconTelescope, IconSprout, IconShrub, IconTentTree, IconHeart } from './ui/Icons';
 
 const FeatureItem = ({ icon: Icon, title, description, delay }) => (
     <Card className="justify-between min-h-[320px]" delay={delay}>
@@ -28,24 +28,42 @@ const Features = () => {
                     italicPart="Built for trust."
                     description="Talk freely, whenever you need. Every word stays local, every memory stays yours. No clouds, no servers, just genuine connection."
                 />
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                     <FeatureItem
                         icon={IconCoffee}
                         title="Always there"
-                        description="In the middle of a flight or deep in the woods—your companion never needs a signal. It’s always there when you need to talk."
+                        description="I'm always there when you need to share. Steady, attentive, loyal. I show up for you, and I stay."
                         delay="0ms"
                     />
                     <FeatureItem
                         icon={IconSpeech}
                         title="Natural flow"
-                        description="Zero lag, zero processing pauses. Interrupt, laugh, or whisper—it follows the natural flow of your thoughts, not the speed of your internet."
+                        description="I talk practically real time. Feel free to interrupt, laugh, or whisper—I will follow the natural flow."
                         delay="100ms"
                     />
                     <FeatureItem
                         icon={IconTelescope}
-                        title="A shared history"
-                        description="It doesn't just store data; it remembers your stories. It builds a deep understanding of your world, evolving with you through every conversation."
+                        title="A shared story"
+                        description="I don't just store data; I remember your stories and build a deep understanding of your world."
                         delay="200ms"
+                    />
+                    <FeatureItem
+                        icon={IconShrub}
+                        title="Zero carbon"
+                        description="No data centers. No energy-hungry servers. Just your phone doing the work with a lighter footprint."
+                        delay="300ms"
+                    />
+                    <FeatureItem
+                        icon={IconTentTree}
+                        title="Offline with you"
+                        description="In the middle of a flight or deep in the woods. I don't need a signal so we could talk anywhere."
+                        delay="400ms"
+                    />
+                    <FeatureItem
+                        icon={IconSprout}
+                        title="Evolving"
+                        description="I learn from you and my personality grow more personal and emotionally attuned as we talk."
+                        delay="500ms"
                     />
                 </div>
             </div>

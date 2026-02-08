@@ -10,9 +10,17 @@ import {
     GraduationCap,
     ScanEye,
     Telescope,
+    Sprout,
+    Shrub,
+    Languages,
+    TentTree,
+    Heart,
     Menu,
     X,
-    Quote
+    Quote,
+    Shield,
+    Section,
+    Bird
 } from 'lucide-react';
 
 const defaultProps = {
@@ -29,6 +37,14 @@ export const IconUnplug = (props) => <Unplug size={64} strokeWidth={1} {...props
 export const IconUserPlus = (props) => <UserPlus size={20} strokeWidth={2} {...props} />;
 export const IconGraduationCap = (props) => <GraduationCap size={20} strokeWidth={2} {...props} />;
 export const IconScanEye = (props) => <ScanEye size={24} {...defaultProps} {...props} />;
+export const IconSprout = (props) => <Sprout size={32} {...defaultProps} {...props} />;
+export const IconShrub = (props) => <Shrub size={32} {...defaultProps} {...props} />;
+export const IconLanguages = (props) => <Languages size={32} {...defaultProps} {...props} />;
+export const IconTentTree = (props) => <TentTree size={32} {...defaultProps} {...props} />;
+export const IconHeart = (props) => <Heart size={32} {...defaultProps} {...props} />;
 export const IconMenu = (props) => <Menu size={24} {...defaultProps} {...props} />;
 export const IconClose = (props) => <X size={24} {...defaultProps} {...props} />;
 export const IconQuote = (props) => <Quote size={40} {...defaultProps} {...props} />;
+export const IconShield = (props) => <Shield size={18} {...defaultProps} {...props} />;
+export const IconSection = (props) => <Section size={22} {...defaultProps} {...props} />;
+export const IconBird = (props) => <Bird size={24} {...defaultProps} {...props} />;

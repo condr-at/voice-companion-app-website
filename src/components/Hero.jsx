@@ -3,6 +3,7 @@ import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 import Badge from './ui/Badge';
 import { IconUserPlus, IconGraduationCap } from './ui/Icons';
+import { BETA_FORM_URL } from '../lib/links';
 
 const Hero = () => {
     return (
@@ -23,7 +24,13 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style={{ transitionDelay: '400ms' }}>
-                <Button variant="heroPrimary" icon={IconUserPlus}>
+                <Button
+                    variant="heroPrimary"
+                    icon={IconUserPlus}
+                    href={BETA_FORM_URL}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
                     Join Beta
                 </Button>
                 <Button

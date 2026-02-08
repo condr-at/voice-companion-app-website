@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './ui/Button';
+import { BETA_FORM_URL } from '../lib/links';
 
 const AppleIcon = () => (
     <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -19,12 +20,17 @@ const CallToAction = () => {
                     <h2 className="text-6xl md:text-8xl font-light text-[#F3F2EF] mb-8 tracking-tight no-squeeze editorial-fit-wrap">
                         <span className="editorial-fit-center">Ready to meet<br />your companion?</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-stone-400 mb-12 font-light font-sans">
+                    <p className="text-xl md:text-2xl [line-height:0.9] text-stone-400 mb-12 font-light font-sans">
                         Experience the calm of a technology that works for you, stays with you, and remains entirely yours.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
-                        <Button variant="ctaPrimary">
+                        <Button
+                            variant="ctaPrimary"
+                            href={BETA_FORM_URL}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
                             Join Beta
                         </Button>
                         {/* <Button variant="ctaOutline">

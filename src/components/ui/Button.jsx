@@ -6,6 +6,10 @@ const Button = ({
     className = '',
     icon: Icon,
     onClick,
+    href,
+    target,
+    rel,
+    type = 'button',
     ...props
 }) => {
     const baseStyles = "px-6 py-2 rounded-full transition-all active:scale-95 flex items-center justify-center gap-2 font-medium cursor-pointer";
@@ -22,11 +26,16 @@ const Button = ({
     };
 
     const currentVariant = variants[variant] || variants.primary;
+    const Component = href ? 'a' : 'button';
+    const componentProps = href
+        ? { href, target, rel }
+        : { type };
 
     return (
-        <button
+        <Component
             className={`${baseStyles} ${currentVariant} ${className} origin-center`}
             onClick={onClick}
+            {...componentProps}
             {...props}
         >
             {variant === 'heroPrimary' && (
@@ -36,7 +45,7 @@ const Button = ({
                 {Icon && <Icon className="w-5 h-5" />}
                 <span className="font-sans font-normal uppercase tracking-wider">{children}</span>
             </span>
-        </button>
+        </Component>
     );
 };
 
