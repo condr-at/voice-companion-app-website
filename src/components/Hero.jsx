@@ -2,7 +2,7 @@ import React from 'react';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 import Badge from './ui/Badge';
-import { IconMagic, IconFileText } from './ui/Icons';
+import { IconSmilePlus, IconGraduationCap } from './ui/Icons';
 
 const Hero = () => {
     return (
@@ -23,15 +23,15 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style={{ transitionDelay: '400ms' }}>
-                <Button variant="heroPrimary" icon={IconMagic}>
+                <Button variant="heroPrimary" icon={IconSmilePlus}>
                     Join Beta
                 </Button>
                 <Button
                     variant="heroGlass"
-                    icon={IconFileText}
+                    icon={IconGraduationCap}
                     onClick={() => scrollToSection('#research')}
                 >
-                    Research
+                    Read Papers
                 </Button>
             </div>
         </section>

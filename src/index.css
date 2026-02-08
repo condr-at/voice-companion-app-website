@@ -76,6 +76,12 @@ h6 {
     transform: scaleX(1);
 }
 
+/* Use to prevent heading squeeze while allowing squeezed inner spans */
+.no-squeeze {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .noise-overlay {
     position: fixed;
     top: 0;

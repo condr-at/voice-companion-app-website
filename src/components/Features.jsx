@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './ui/Card';
 import SectionHeader from './ui/SectionHeader';
-import { IconOffline, IconFlow, IconStories } from './ui/Icons';
+import { IconCoffee, IconSpeech, IconScrollText } from './ui/Icons';
 
 const FeatureItem = ({ icon: Icon, title, description, delay }) => (
     <Card className="justify-between min-h-[320px]" delay={delay}>
@@ -9,7 +9,7 @@ const FeatureItem = ({ icon: Icon, title, description, delay }) => (
             <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center text-stone-800 mb-6 shadow-sm">
                 <Icon className="w-8 h-8" />
             </div>
-            <h3 className="text-4xl text-stone-900 mb-2 font-normal">
+            <h3 className="text-5xl text-stone-900 mb-2 font-normal no-squeeze">
                 <span className="editorial">{title}</span>
             </h3>
         </div>
@@ -30,19 +30,19 @@ const Features = () => {
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <FeatureItem
-                        icon={IconOffline}
+                        icon={IconCoffee}
                         title="Always there"
                         description="In the middle of a flight or deep in the woods—your companion never needs a signal. It’s always there when you need to talk."
                         delay="0ms"
                     />
                     <FeatureItem
-                        icon={IconFlow}
+                        icon={IconSpeech}
                         title="Natural flow"
                         description="Zero lag, zero processing pauses. Interrupt, laugh, or whisper—it follows the natural flow of your thoughts, not the speed of your internet."
                         delay="100ms"
                     />
                     <FeatureItem
-                        icon={IconStories}
+                        icon={IconScrollText}
                         title="A shared history"
                         description="It doesn't just store data; it remembers your stories. It builds a deep understanding of your world, evolving with you through every conversation."
                         delay="200ms"
