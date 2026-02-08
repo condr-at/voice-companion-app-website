@@ -7,17 +7,19 @@ import { IconMagic, IconFileText } from './ui/Icons';
 const Hero = () => {
     return (
         <section className="max-w-6xl mx-auto text-center space-y-12 mb-32 min-h-[70vh] flex flex-col justify-center">
-            <Badge ping className="mx-auto">Cognitive Augmentation • Version 1.0</Badge>
+            <div className="flex flex-wrap justify-center gap-3 reveal">
+                <Badge ping>Closed beta available</Badge>
+                <Badge tag="SOON" pingVariant="yellow">Show photos and images to your companion</Badge>
+            </div>
+
 
             <h1 className="text-7xl md:text-9xl font-light text-stone-900 leading-[0.85] tracking-tight reveal" style={{ transitionDelay: '100ms' }}>
                 <span className="editorial-center block">The silent witness</span>
                 <span className="editorial-center block italic text-stone-500">to your life.</span>
             </h1>
 
-            <p className="text-2xl md:text-3xl font-light text-stone-600 max-w-2xl mx-auto leading-relaxed mt-8 reveal" style={{ transitionDelay: '200ms' }}>
-                <span className="editorial-center block w-[117.6%] -ml-[8.8%]">
-                    A clinical-grade conversational agent designed to enhance cognitive performance and emotional regulation through persistent, on-device memory.
-                </span>
+            <p className="text-xl md:text-2xl font-light text-stone-600 max-w-2xl mx-auto leading-relaxed mt-8 reveal font-sans" style={{ transitionDelay: '200ms' }}>
+                A clinical-grade conversational agent designed to enhance cognitive performance and emotional regulation through persistent, on-device memory.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal" style={{ transitionDelay: '400ms' }}>

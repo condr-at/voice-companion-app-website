@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './ui/Card';
+import SectionHeader from './ui/SectionHeader';
 import { IconPulse, IconBolt, IconMic } from './ui/Icons';
 
 const FeatureItem = ({ icon: Icon, title, description, delay }) => (
@@ -12,10 +13,8 @@ const FeatureItem = ({ icon: Icon, title, description, delay }) => (
                 <span className="editorial">{title}</span>
             </h3>
         </div>
-        <p className="text-xl text-stone-600 leading-relaxed font-light">
-            <span className="editorial w-[117.6%] block">
-                {description}
-            </span>
+        <p className="text-lg text-stone-600 leading-relaxed font-light font-sans">
+            {description}
         </p>
     </Card>
 );
@@ -24,6 +23,11 @@ const Features = () => {
     return (
         <section id="features" className="py-20 relative z-10">
             <div className="max-w-7xl mx-auto">
+                <SectionHeader
+                    title="Everything local."
+                    italicPart="Built for privacy."
+                    description="Your conversations are yours alone. No clouds, no servers, no trade-offs. Powered by the Neural Engine on your device."
+                />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <FeatureItem
                         icon={IconPulse}

@@ -14,14 +14,12 @@ const Privacy = () => {
 
                     <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-10">
-                            <h2 className="text-5xl md:text-7xl text-stone-900 leading-[0.9]">
-                                <span className="editorial block">Scientific integrity</span>
-                                <span className="editorial block italic text-stone-500">demands security.</span>
+                            <h2 className="text-4xl md:text-5xl text-stone-900 leading-[0.9]">
+                                <span className="editorial block">Intimacy demands</span>
+                                <span className="editorial block italic text-stone-500">exceptional privacy</span>
                             </h2>
-                            <p className="text-xl text-stone-700 font-light leading-relaxed">
-                                <span className="editorial block w-[117.6%]">
-                                    Intimate data requires sovereign storage. By executing the inference lifecycle entirely within the secure enclave, we ensure zero leakage of psychological state data.
-                                </span>
+                            <p className="text-xl text-stone-700 font-light leading-relaxed font-sans">
+                                Intimate data requires sovereign storage. By executing the inference lifecycle entirely within the secure enclave, we ensure zero leakage of psychological state data.
                             </p>
 
                             <div className="space-y-4 pt-4">
@@ -29,13 +27,13 @@ const Privacy = () => {
                                     <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60">
                                         <IconShield className="text-stone-800" />
                                     </div>
-                                    <span className="text-xl text-stone-800 editorial">Zero cloud-side telemetry or logging</span>
+                                    <span className="text-lg text-stone-800 font-sans font-normal">Zero cloud-side telemetry or logging</span>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center border border-white/60">
                                         <IconLock className="text-stone-800" />
                                     </div>
-                                    <span className="text-xl text-stone-800 editorial">End-to-end local vector encryption</span>
+                                    <span className="text-lg text-stone-800 font-sans font-normal">End-to-end local vector encryption</span>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +51,7 @@ const Privacy = () => {
                                 </div>
                             </div>
                             <div className="absolute bottom-10 text-center w-full z-20">
-                                <p className="text-sm font-sans font-medium text-stone-500 uppercase tracking-widest">On-Device Sovereign AI</p>
+                                <p className="text-sm font-sans font-normal text-stone-500 uppercase tracking-widest">On-Device Sovereign AI</p>
                             </div>
                         </div>
                     </div>

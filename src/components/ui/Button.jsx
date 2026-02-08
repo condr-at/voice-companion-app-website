@@ -34,7 +34,7 @@ const Button = ({
             )}
             <span className="relative z-10 flex items-center gap-2">
                 {Icon && <Icon className="w-5 h-5" />}
-                <span className="editorial-center">{children}</span>
+                <span className="font-sans font-normal uppercase tracking-wider">{children}</span>
             </span>
         </button>
     );

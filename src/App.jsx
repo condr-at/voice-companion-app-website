@@ -4,8 +4,8 @@ import Hero from './components/Hero';
 import Research from './components/Research';
 import Features from './components/Features';
 import Privacy from './components/Privacy';
-import Expansion from './components/Expansion';
-import Manifesto from './components/Manifesto';
+import ComingSoon from './components/ComingSoon';
+import Testimonial from './components/Testimonial';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import Background from './components/Background';
@@ -46,8 +46,8 @@ const App = () => {
         <Research />
         <Features />
         <Privacy />
-        <Expansion />
-        <Manifesto />
+        <ComingSoon />
+        <Testimonial />
         <CallToAction />
       </main>
 

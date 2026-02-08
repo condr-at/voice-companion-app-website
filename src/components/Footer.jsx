@@ -11,7 +11,7 @@ const Footer = () => {
                             <div className="w-6 h-6 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
                                 <div className="w-1.5 h-1.5 bg-stone-900 rounded-full"></div>
                             </div>
-                            <span className="text-xl font-bold tracking-tight text-stone-900 editorial">Voice Companion App</span>
+                            <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
                         </a>
                         <p className="text-stone-500 max-w-sm font-light text-lg">
                             <span className="editorial block w-[117.6%]">
@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-6 font-sans">Resources</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Resources</h4>
                         <ul className="space-y-3">
                             <li><a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Clinical Findings</a></li>
                             <li><a href="#" className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Whitepaper PDF</a></li>
@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-6 font-sans">Company</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-6 font-sans">Company</h4>
                         <ul className="space-y-3">
                             <li><a href="#" className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Our Ethics</a></li>
                             <li><a href="#" className="text-stone-600 hover:text-stone-900 transition-colors editorial text-xl">Research Lab</a></li>

@@ -15,7 +15,7 @@ const Research = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <Card className="space-y-8" p="12">
                         <div className="flex items-center gap-4 text-stone-400">
-                            <span className="text-sm font-bold tracking-widest uppercase font-sans">Domain: Emotional Regulation</span>
+                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Emotional Regulation</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
                         <h3 className="text-4xl text-stone-900 editorial">Expressive Verbalization Dynamics</h3>
@@ -31,7 +31,7 @@ const Research = () => {
 
                     <Card className="space-y-8" delay="100ms">
                         <div className="flex items-center gap-4 text-stone-400">
-                            <span className="text-sm font-bold tracking-widest uppercase font-sans">Domain: Social Connectivity</span>
+                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Social Connectivity</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
                         <h3 className="text-4xl text-stone-900 editorial">The "Trusted Confidant" Effect</h3>
@@ -50,15 +50,15 @@ const Research = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                         <div>
                             <div className="text-6xl font-light text-stone-900 mb-2 editorial">0.84</div>
-                            <p className="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans">Correlation: Interaction vs Calm</p>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Correlation: Interaction vs Calm</p>
                         </div>
                         <div>
                             <div className="text-6xl font-light text-stone-900 mb-2 editorial">14.2%</div>
-                            <p className="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans">Increase in Working Memory Capacity</p>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Increase in Working Memory Capacity</p>
                         </div>
                         <div>
                             <div className="text-6xl font-light text-stone-900 mb-2 editorial">30ms</div>
-                            <p className="text-sm font-bold uppercase tracking-widest text-stone-500 font-sans">Neural Response Latency (Local)</p>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Neural Response Latency (Local)</p>
                         </div>
                     </div>
                 </div>

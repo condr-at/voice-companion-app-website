@@ -10,13 +10,13 @@ const Navigation = () => {
                     <div className="w-8 h-8 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
                         <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
                     </div>
-                    <span className="text-xl font-bold tracking-tight text-stone-900 editorial">Voice Companion App</span>
+                    <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
                 </a>
 
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('#features'); }} className="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial">Features</a>
-                    <a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial">Research</a>
-                    <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollToSection('#privacy'); }} className="text-lg text-stone-600 hover:text-stone-900 transition-colors editorial">Privacy</a>
+                    <a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('#features'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Features</a>
+                    <a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Research</a>
+                    <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollToSection('#privacy'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Privacy</a>
                 </div>
 
                 <Button variant="nav">Download Beta</Button>

@@ -19,10 +19,8 @@ const CallToAction = () => {
                     <h2 className="text-6xl md:text-8xl font-light text-[#F3F2EF] mb-8 tracking-tight">
                         <span className="editorial-center">Ready to meet<br />your companion?</span>
                     </h2>
-                    <p className="text-2xl text-stone-400 mb-12 font-light">
-                        <span className="editorial-center">
-                            Experience the calm of a technology that works for you, stays with you, and never sells you out.
-                        </span>
+                    <p className="text-xl md:text-2xl text-stone-400 mb-12 font-light font-sans">
+                        Experience the calm of a technology that works for you, stays with you, and never sells you out.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
