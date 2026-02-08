@@ -28,7 +28,7 @@ const Features = () => {
                     italicPart="Built for privacy."
                     description="Your conversations are yours alone. No clouds, no servers, no trade-offs. Powered by the Neural Engine on your device."
                 />
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <FeatureItem
                         icon={IconPulse}
                         title="True Offline"

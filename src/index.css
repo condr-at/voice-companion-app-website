@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
 
 @theme {
     --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -22,11 +22,30 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Compress Garamond by default for headings and serif text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    transform: scaleX(0.85);
+    transform-origin: left;
+}
+
+.font-serif,
 .editorial {
     font-family: var(--font-serif);
     transform: scaleX(0.85);
     transform-origin: left;
     display: inline-block;
+}
+
+/* Reset for block-level behavior if needed while maintaining squeeze */
+.block-editorial {
+    display: block;
+    width: 100%;
 }
 
 .editorial-center {
@@ -36,8 +55,20 @@ body {
     display: inline-block;
 }
 
+/* Ensure centered text in headers also uses center origin */
+.text-center h1,
+.text-center h2,
+.text-center h3,
+.text-center h4,
+.text-center h5,
+.text-center h6 {
+    transform-origin: center;
+}
+
 .font-sans {
     font-family: var(--font-sans);
+    /* Ensure sans font is never accidentally squeezed if nested */
+    transform: scaleX(1);
 }
 
 .noise-overlay {

@@ -7,58 +7,59 @@ const Research = () => {
         <section id="research" className="py-32 relative z-10 scroll-mt-24">
             <div className="max-w-7xl mx-auto">
                 <SectionHeader
-                    title="Evidence-based"
-                    italicPart="psychological impact."
-                    description="Extensive literature suggests that structured verbalization and persistent social interaction significantly correlate with improved markers of psychological well-being."
+                    title="Scientifically"
+                    italicPart="validated support."
+                    description="Recent meta-analyses of clinical trials confirm that AI-based conversational agents significantly reduce distress, depression, and anxiety across diverse populations."
                 />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <Card className="space-y-8" p="12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <Card className="space-y-8" delay="0ms">
                         <div className="flex items-center gap-4 text-stone-400">
-                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Emotional Regulation</span>
+                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Generative AI Support</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
-                        <h3 className="text-4xl text-stone-900 editorial">Expressive Verbalization Dynamics</h3>
+                        <h3 className="text-4xl text-stone-900 editorial">Socially-Oriented Interaction</h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
-                            Longitudinal meta-analyses of expressive writing and verbalization (Pennebaker & Beall, 1986) indicate a <span className="text-stone-900 font-semibold">23% mean reduction</span> in physiological stress markers. By providing an always-available conversational partner, we facilitate consistent "brain dumping," which reduces cognitive load and improves mood stability.
+                            Large-scale analysis of 6,314 participants confirms that GenAI chatbots significantly mitigate negative affective states <span className="text-stone-900 font-semibold">(ES = 0.30)</span>. Socially-oriented bots for emotional support outperformed task-oriented systems.
                         </p>
                         <div className="pt-6 border-t border-stone-100">
-                            <p className="text-sm italic text-stone-400 font-sans">
-                                Citation: Pennebaker, J. W., & Beall, S. K. (1986). Confronting a traumatic event: toward an understanding of inhibition and disease. Journal of Abnormal Psychology.
+                            <p className="text-sm italic text-stone-400 font-sans leading-snug">
+                                Citation: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12707440/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-600 underline decoration-stone-200 underline-offset-4 transition-colors">Zhang et al. (2025). The efficacy of generative AI chatbots on mental health outcomes. PMC12707440.</a>
                             </p>
                         </div>
                     </Card>
 
                     <Card className="space-y-8" delay="100ms">
                         <div className="flex items-center gap-4 text-stone-400">
-                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Social Connectivity</span>
+                            <span className="text-sm font-semibold tracking-widest uppercase font-sans">Domain: Adolescent Psychology</span>
                             <div className="h-px flex-1 bg-stone-200"></div>
                         </div>
-                        <h3 className="text-4xl text-stone-900 editorial">The "Trusted Confidant" Effect</h3>
+                        <h3 className="text-4xl text-stone-900 editorial">Youth Distress Mitigation</h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
-                            Data suggests that the perceived presence of a non-judgmental, stable conversational partner significantly mitigates the cortisol spikes associated with loneliness (Holt-Lunstad et al., 2010). Our agent leverages <span className="text-stone-900 font-semibold">Zero-Latency Interaction</span> to simulate the rapid feedback loops essential for social bond reinforcement.
+                            A systematic study of 29,637 participants shows a consistent reduction in <span className="text-stone-900 font-semibold">psychological distress (SMD = -0.35)</span> among youth. Generative AI models were highlighted as a particularly promising frontier for engagement.
                         </p>
                         <div className="pt-6 border-t border-stone-100">
-                            <p className="text-sm italic text-stone-400 font-sans">
-                                Citation: Holt-Lunstad, J., Smith, T. B., & Layton, J. B. (2010). Social relationships and mortality risk: a meta-analytic review. PLoS Medicine.
+                            <p className="text-sm italic text-stone-400 font-sans leading-snug">
+                                Citation: <a href="https://pubmed.ncbi.nlm.nih.gov/41313175/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-600 underline decoration-stone-200 underline-offset-4 transition-colors">Lyu et al. (2025). Digital conversational agents for psychological distress in youth. PubMed 41313175.</a>
                             </p>
                         </div>
                     </Card>
                 </div>
 
-                <div className="mt-12 glass-card p-12 rounded-[3rem] data-grid reveal" style={{ transitionDelay: '200ms' }}>
+                <div className="mt-12 glass-card p-12 rounded-[3rem] data-grid reveal" style={{ transitionDelay: '300ms' }}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">0.84</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Correlation: Interaction vs Calm</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">0.30</div>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Effect Size (Affective Mitigation)</p>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">14.2%</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Increase in Working Memory Capacity</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">6,314</div>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Participants in GenAI Studies</p>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">30ms</div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Neural Response Latency (Local)</p>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">29,637</div>
+                            <p className="text-sm font-semibold uppercase tracking-widest text-stone-500 font-sans">Youth Health Data Points</p>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { IconShield, IconLock, IconBrain } from './ui/Icons';
 
 const Privacy = () => {
     return (
-        <section id="privacy" className="py-20 relative z-10">
+        <section id="privacy_manifesto" className="py-20 relative z-10">
             <div className="max-w-7xl mx-auto">
                 <Card className="p-12 md:p-24 relative overflow-hidden" delay="0ms">
                     <div className="absolute inset-0 opacity-40 pointer-events-none">
@@ -14,9 +14,8 @@ const Privacy = () => {
 
                     <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-10">
-                            <h2 className="text-4xl md:text-5xl text-stone-900 leading-[0.9]">
-                                <span className="editorial block">Intimacy demands</span>
-                                <span className="editorial block italic text-stone-500">exceptional privacy</span>
+                            <h2 className="text-5xl md:text-6xl text-stone-900 leading-[1.1]">
+                                Intimacy demands <em className="text-stone-500 italic">exceptional privacy</em>
                             </h2>
                             <p className="text-xl text-stone-700 font-light leading-relaxed font-sans">
                                 Intimate data requires sovereign storage. By executing the inference lifecycle entirely within the secure enclave, we ensure zero leakage of psychological state data.

@@ -9,7 +9,7 @@ const AppleIcon = () => (
 
 const CallToAction = () => {
     return (
-        <section className="max-w-7xl mx-auto mb-20 reveal">
+        <section id="cta" className="max-w-7xl mx-auto mb-20 reveal">
             <div className="bg-stone-900 rounded-[2.5rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
 
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>

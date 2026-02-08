@@ -1,28 +1,106 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Menu as MenuIcon, X } from 'lucide-react';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 
 const Navigation = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navItems = [
+        { name: 'Research', href: '#research' },
+        { name: 'Features', href: '#features' },
+        { name: 'Manifesto', href: '#privacy_manifesto' },
+        { name: 'Coming Soon', href: '#coming-soon' },
+    ];
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    const handleNavClick = (href) => {
+        setIsOpen(false);
+        if (href === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            scrollToSection(href);
+        }
+    };
+
     return (
-        <nav className="fixed top-0 w-full z-40 px-6 py-6 transition-all duration-300">
-            <div className="max-w-7xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full">
-                <a href="#" className="flex items-center gap-2 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                    <div className="w-8 h-8 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
-                        <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+            <div className="max-w-7xl mx-auto px-6">
+                <div className={`flex justify-between items-center glass px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'shadow-lg bg-white/40' : ''}`}>
+                    <a
+                        href="#"
+                        className="flex items-center gap-2 group"
+                        onClick={(e) => { e.preventDefault(); handleNavClick('#'); }}
+                    >
+                        <div className="w-8 h-8 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
+                            <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
+                        </div>
+                        <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion</span>
+                    </a>
+
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-8">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
+                                className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors"
+                            >
+                                {item.name}
+                            </a>
+                        ))}
                     </div>
-                    <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
-                </a>
 
-                <div className="hidden md:flex items-center gap-8">
-                    <a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('#features'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Features</a>
-                    <a href="#research" onClick={(e) => { e.preventDefault(); scrollToSection('#research'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Research</a>
-                    <a href="#privacy" onClick={(e) => { e.preventDefault(); scrollToSection('#privacy'); }} className="text-sm font-sans font-normal uppercase tracking-widest text-stone-600 hover:text-stone-900 transition-colors">Privacy</a>
+                    <div className="hidden md:block">
+                        <Button variant="nav" onClick={() => handleNavClick('#cta')}>Download Beta</Button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="md:hidden p-2 text-stone-900 hover:bg-stone-100 rounded-full transition-colors focus:outline-none"
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
+                    </button>
                 </div>
+            </div>
 
-                <Button variant="nav">Download Beta</Button>
+            {/* Mobile Navigation Overlay */}
+            <div
+                className={`fixed inset-0 bg-stone-50/95 backdrop-blur-xl z-[-1] md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                    }`}
+            >
+                <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+                    {navItems.map((item) => (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
+                            className="text-2xl font-serif text-stone-900 tracking-tight hover:text-stone-600 transition-colors editorial"
+                        >
+                            {item.name}
+                        </a>
+                    ))}
+                    <div className="mt-4 w-full max-w-xs">
+                        <Button variant="nav" onClick={() => handleNavClick('#cta')} className="w-full py-4 text-lg">Download Beta</Button>
+                    </div>
+                </div>
             </div>
         </nav>
     );
 };
 
 export default Navigation;
+
