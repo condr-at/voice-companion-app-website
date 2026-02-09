@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IconMenu, IconClose, IconSection } from './ui/Icons';
+import { IconMenu, IconClose } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import Button from './ui/Button';
 import JoinBetaLabel from './ui/JoinBetaLabel';
@@ -47,7 +47,7 @@ const Navigation = () => {
                         onClick={(e) => { e.preventDefault(); handleNavClick('#'); }}
                     >
                         <div className="w-8 h-8 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
-                            <IconSection className="text-stone-900" />
+                            <span className="text-lg font-sans text-stone-900 leading-none" aria-label="Logo ampersand">&amp;</span>
                         </div>
                         <span className="text-xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion</span>
                     </a>

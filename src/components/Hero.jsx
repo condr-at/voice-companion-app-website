@@ -11,7 +11,6 @@ const Hero = () => {
         <section className="max-w-6xl mx-auto text-center space-y-12 mb-32 min-h-[70vh] flex flex-col justify-center">
             <div className="flex flex-wrap justify-center gap-3 reveal">
                 <Badge ping>Closed beta available</Badge>
-                <Badge tag="SOON" pingVariant="yellow">Show photos and images to your companion</Badge>
             </div>
 
 

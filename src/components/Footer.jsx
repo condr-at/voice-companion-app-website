@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { IconClose, IconSection } from './ui/Icons';
+import { IconClose } from './ui/Icons';
 import { scrollToSection } from '../utils/scroll';
 import { BETA_FORM_URL } from '../lib/links';
 
@@ -38,9 +38,16 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div className="col-span-1 md:col-span-2 space-y-6">
-                        <a href="#" className="flex items-center gap-2 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                        <a
+                            href="#"
+                            className="flex items-center gap-2 group"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                        >
                             <div className="w-6 h-6 rounded-full border border-stone-400/50 flex items-center justify-center bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-110">
-                                <IconSection className="text-stone-900" size={16} />
+                                <span className="text-sm font-sans text-stone-900 leading-none" aria-label="Logo ampersand">&amp;</span>
                             </div>
                             <span className="text-3xl md:text-2xl font-semibold tracking-tight text-stone-900 editorial">Voice Companion App</span>
                         </a>
@@ -129,14 +136,7 @@ const Footer = () => {
                         >
                             Privacy Policy
                         </button>
-                        <a
-                            href={BETA_FORM_URL}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="text-stone-400 hover:text-stone-600 text-sm font-sans"
-                        >
-                            Join Beta
-                        </a>
+
                     </div>
                 </div>
             </div>

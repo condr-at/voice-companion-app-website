@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconQuote } from './ui/Icons';
 import Card from './ui/Card';
+import testimonialPhoto from '../../assets/quote_photo.png';
 
 const Testimonial = () => {
     return (
@@ -11,17 +12,17 @@ const Testimonial = () => {
                 <div className="relative z-10">
                     <IconQuote className="mx-auto text-stone-400 mb-8 opacity-50" />
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10 no-squeeze editorial-fit-wrap">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10 no-squeeze">
                         <span className="editorial-fit-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
                     </h2>
 
                     <div className="flex items-center justify-center gap-4">
                         <div className="w-12 h-12 rounded-full overflow-hidden border border-white/50">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="User" className="w-full h-full object-cover" />
+                            <img src={testimonialPhoto} alt="User" className="w-full h-full object-cover" />
                         </div>
                         <div className="text-left">
-                            <div className="text-lg font-medium text-stone-900 editorial">Conrad K.</div>
-                            <div className="text-base text-stone-500 editorial">Creator and early explorer</div>
+                            <div className="text-2xl font-medium text-stone-900 editorial">Conrad K.</div><br />
+                            <div className="text-lg text-stone-500 editorial">Founder and early explorer</div>
                         </div>
                     </div>
                 </div>
