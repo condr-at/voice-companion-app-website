@@ -21,7 +21,7 @@ const Research = () => {
                         </div>
                         <h3 className="text-5xl text-stone-900 no-squeeze editorial-fit-wrap"><span className="editorial-fit">Socially-Oriented Interaction</span></h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
-                            Large-scale analysis of 6,314 participants confirms that GenAI chatbots significantly mitigate negative affective states <span className="text-stone-900 font-semibold"> (ES = 0.30)</span>. Socially-oriented bots for emotional support outperformed task-oriented systems.
+                            Large-scale analysis of 6,314 participants confirms that GenAI chatbots significantly mitigate negative affective states <span className="pl-1 text-stone-900 font-semibold"> (ES&nbsp;=&nbsp;0.30)</span>. Socially-oriented bots for emotional support outperformed task-oriented systems.
                         </p>
                         <div className="mt-auto pt-6 border-t border-stone-100">
                             <p className="text-sm italic text-stone-400 font-sans leading-snug">
@@ -37,7 +37,7 @@ const Research = () => {
                         </div>
                         <h3 className="text-5xl text-stone-900 no-squeeze editorial-fit-wrap"><span className="editorial-fit">Youth Distress Mitigation</span></h3>
                         <p className="text-lg text-stone-600 font-sans leading-relaxed">
-                            A systematic study of 29,637 participants shows a consistent reduction in <span className="text-stone-900 font-semibold">psychological distress (SMD = -0.35)</span> among youth. Generative AI models were highlighted as a particularly promising frontier for engagement.
+                            A systematic study of 29,637 participants shows a consistent reduction in <span className="text-stone-900 font-semibold px-1">psychological distress (SMD&nbsp;=&nbsp;-0.35)</span> among youth. Generative AI models were highlighted as a particularly promising frontier for engagement.
                         </p>
                         <div className="mt-auto pt-6 border-t border-stone-100">
                             <p className="text-sm italic text-stone-400 font-sans leading-snug">
@@ -50,13 +50,13 @@ const Research = () => {
                 <div className="mt-12 glass-card p-12 rounded-[3rem] data-grid reveal" style={{ transitionDelay: '300ms' }}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">Evidence<br/>Based</div>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">Evidence<br />Based</div>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">35,951<br/>Participants</div>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">35,951<br />Participants</div>
                         </div>
                         <div>
-                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">30%<br/>Less Stress</div>
+                            <div className="text-6xl font-light text-stone-900 mb-2 editorial">30%<br />Less Stress</div>
                         </div>
                     </div>
                 </div>

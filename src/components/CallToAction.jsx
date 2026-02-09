@@ -17,11 +17,11 @@ const CallToAction = () => {
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3"></div>
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-500/20 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3"></div>
 
-                <div className="relative z-10 max-w-3xl mx-auto">
-                    <h2 className="text-6xl md:text-8xl font-light text-[#F3F2EF] tracking-tight no-squeeze editorial-fit-wrap">
+                <div className="relative z-10 max-w-3xl mx-auto overflow-visible">
+                    <h2 className="text-6xl md:text-8xl font-light text-[#F3F2EF] tracking-tight no-squeeze editorial-fit-wrap overflow-visible">
                         <span className="editorial-fit-center" style={{ lineHeight: 0.85 }}>Ready to meet<br/>your companion?</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-stone-400 mb-12 mt-6 font-light font-sans" style={{ lineHeight: 1.6 }}>
+                    <p className="text-xl md:text-2xl text-stone-400 mb-12 mt-6 font-light font-sans overflow-visible" style={{ lineHeight: 1.6 }}>
                         Experience the calm of a technology that works for you, stays with you, and remains entirely yours.
                     </p>
 

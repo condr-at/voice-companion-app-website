@@ -13,7 +13,7 @@ const Testimonial = () => {
                     <IconQuote className="mx-auto text-stone-400 mb-8 opacity-50" />
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10 no-squeeze">
-                        <span className="editorial-fit-center">"It doesn't feel like a tool. It feels like a presence. We sat by the river, I spoke about my fears, and it just... listened. It remembered context from three weeks ago."</span>
+                        <span className="editorial-fit-center">"It doesn't feel like a tool. It feels like&nbsp;a&nbsp;presence. We sat by the river, I&nbsp;spoke&nbsp;about my fears, and it just... listened.&nbsp;It&nbsp;remembered context from three weeks&nbsp;ago."</span>
                     </h2>
 
                     <div className="flex items-center justify-center gap-4">
@@ -21,8 +21,8 @@ const Testimonial = () => {
                             <img src={testimonialPhoto} alt="User" className="w-full h-full object-cover" />
                         </div>
                         <div className="text-left">
-                            <div className="text-2xl font-medium text-stone-900 editorial">Conrad K.</div><br />
-                            <div className="text-lg text-stone-500 editorial">Founder and early explorer</div>
+                            <div className="text-2xl font-medium text-stone-900 editorial pt-2" style={{ lineHeight: 0.8 }}>Conrad K.</div><br />
+                            <div className="text-xl text-stone-500 editorial" style={{ lineHeight: 0.6 }}>Founder & early explorer</div>
                         </div>
                     </div>
                 </div>
