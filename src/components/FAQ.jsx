@@ -5,7 +5,7 @@ import Card from './ui/Card';
 const faqs = [
     {
         question: 'Does it need internet?',
-        answer: 'No. It lives on your phone, so you can talk anywhere—flight mode included.'
+        answer: 'No. It lives on your phone, so you can talk anywhere–flight mode included.'
     },
     {
         question: 'Is it really private?',
@@ -17,7 +17,7 @@ const faqs = [
     },
     {
         question: 'What data do you collect and how is it used?',
-        answer: 'Only what you choose to share with us—like feedback or bug reports. We use it solely to improve the product.'
+        answer: 'Only what you choose to share with us–like feedback or bug reports. We use it solely to improve the product.'
     },
     {
         question: 'What about pricing after beta?',
@@ -33,7 +33,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(0);
 
     return (
-        <section id="faq" className="py-20 relative z-10 px-6 sm:px-8">
+        <section id="faq" className="py-20 relative z-10 px-3 sm:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-start">
                     <SectionHeader

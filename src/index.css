@@ -103,6 +103,14 @@ h6 {
     margin-inline: calc((1 - (1 / 0.85)) * 50%);
 }
 
+/* CTA hard override to prevent layout width expansion from creating scrollbars */
+.cta-fit-fix {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    overflow: hidden;
+}
+
 /* Wraps editorial-fit to prevent visual overflow */
 .editorial-fit-wrap {
     overflow-x: hidden;

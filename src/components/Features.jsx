@@ -38,7 +38,7 @@ const Features = () => {
                     <FeatureItem
                         icon={IconSpeech}
                         title="Natural flow"
-                        description="I talk practically real time. Feel free to interrupt, laugh, or whisper—I will follow the natural flow."
+                        description="I talk practically real time. Feel free to interrupt, laugh, or whisper–I will follow the natural flow."
                         delay="100ms"
                     />
                     <FeatureItem

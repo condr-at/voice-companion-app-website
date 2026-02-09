@@ -48,7 +48,7 @@ const App = () => {
       <Navigation />
       <CookieToast />
 
-      <main className="relative z-10 pt-40 px-6 pb-20">
+      <main className="relative z-10 pt-40 px-3 sm:px-6 pb-20">
         <Hero />
         <Research />
         <Features />

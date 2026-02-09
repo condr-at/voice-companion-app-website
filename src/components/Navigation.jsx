@@ -39,8 +39,8 @@ const Navigation = () => {
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-            <div className="max-w-7xl mx-auto px-6">
-                <div className={`flex justify-between items-center glass px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'shadow-lg bg-white/40' : ''}`}>
+            <div className="max-w-7xl mx-auto px-3 sm:px-6">
+                <div className={`flex justify-between items-center glass px-3 sm:px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'shadow-lg bg-white/40' : ''}`}>
                     <a
                         href="#"
                         className="flex items-center gap-2 group"
@@ -93,7 +93,7 @@ const Navigation = () => {
                 className={`fixed inset-0 bg-stone-50/95 backdrop-blur-xl z-[-1] lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
                     }`}
             >
-                <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+                <div className="flex flex-col items-center justify-center h-full gap-8 px-3 sm:px-6">
                     {navItems.map((item) => (
                         <a
                             key={item.name}

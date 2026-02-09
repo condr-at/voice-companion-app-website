@@ -35,7 +35,7 @@ const Footer = () => {
 
     return (
         <footer className="border-t border-stone-200 bg-white/40 backdrop-blur-md relative z-10">
-            <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div className="col-span-1 md:col-span-2 space-y-6">
                         <a
@@ -142,7 +142,7 @@ const Footer = () => {
             </div>
 
             {privacyOpen && typeof document !== 'undefined' && createPortal(
-                <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-8">
+                <div className="fixed inset-0 z-[60] flex items-center justify-center px-2 sm:px-4 py-8">
                     <button
                         type="button"
                         className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm"
@@ -156,7 +156,7 @@ const Footer = () => {
                         className="relative w-full max-w-2xl rounded-3xl bg-white shadow-2xl border border-stone-200/70"
                         onClick={(event) => event.stopPropagation()}
                     >
-                        <div className="flex items-center justify-between px-6 py-5 border-b border-stone-200/80">
+                        <div className="flex items-center justify-between px-3 sm:px-6 py-5 border-b border-stone-200/80">
                             <div className="flex flex-col">
                                 <h3 id="privacy-policy-title" className="text-2xl text-stone-900 font-sans">
                                     Privacy Policy
@@ -174,7 +174,7 @@ const Footer = () => {
                                 <IconClose />
                             </button>
                         </div>
-                        <div className="px-6 py-6 max-h-[70vh] overflow-y-auto text-stone-700 font-sans space-y-4">
+                        <div className="px-3 sm:px-6 py-6 max-h-[70vh] overflow-y-auto text-stone-700 font-sans space-y-4">
                             <p>
                                 This site is intentionally simple. We do not use cookies, analytics, or tracking pixels, and we do not collect
                                 personal data directly on this website.
