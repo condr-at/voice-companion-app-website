@@ -13,7 +13,7 @@ const Testimonial = () => {
                     <IconQuote className="mx-auto text-stone-400 mb-8 opacity-50" />
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl text-stone-800 leading-tight leading-[0.8] mb-10 no-squeeze">
-                        <span className="editorial-fit-center">"It doesn't feel like a tool. It feels like&nbsp;a&nbsp;presence. We sat by the river, I&nbsp;spoke&nbsp;about my fears, and it just... listened.&nbsp;It&nbsp;remembered context from three weeks&nbsp;ago."</span>
+                        <span className="editorial-fit-center">"It feels less like software and more like a steady listener. I shared something personal. Weeks later, it remembered.<br/>It didn’t feel empty."</span>
                     </h2>
 
                     <div className="flex items-center justify-center gap-4">
