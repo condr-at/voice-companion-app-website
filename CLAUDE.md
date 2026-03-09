@@ -2,7 +2,7 @@
 
 **Status: WIP** — minimal context, will be expanded later.
 
-React 19 + Vite + Tailwind CSS 4. Landing page for the voice assistant app.
+React 19 + Vite + Tailwind CSS 4. Landing page for the voice companion app.
 
 ## Commands
 
